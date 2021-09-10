@@ -1,0 +1,19 @@
+--- 
+title: "A New Instrument for Microbial Epidemiology"
+subtitle: "Empowering Antimicrobial Resistance Data Analysis"
+author: "Matthijs S. Berends"
+date: "25 August 2021"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+# bibliography: [book.bib, packages.bib]
+bibliography: [packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: msberends/a_new_instrument_for_microbial_epidemiology
+description: "This is the PhD thesis of the author."
+---
+
+# Prerequisites {-}
+
+txt
