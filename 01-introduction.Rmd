@@ -1,5 +1,31 @@
 # Introduction {#introduction}
 
+## Microbial Epidemiology
+
+Epidemiology is the medical scientific field that investigates all the factors that determine the presence or absence of diseases and disorders. While many subspecialties within this field exist nowadays, such as veterinary epidemiology and cardiovascular epidemiology, its development started with an infectious disease. Between 1846 and 1860, the world endured the third cholera pandemic, taking assumably millions of lives ^[1]^. The year 1854 was considered the worst year, when 23,000 people died in the United Kingdom, out of 16 million inhabitants (0.14%) ^[2]^. As a side note, this is still quite less than the 146,000 UK deaths due to COVID-19 out of 56 million inhabitants (0.26%) until March 2021 ^[3]^. But 1854 was also the year that the basis was laid for the field of epidemiology by John Snow, an English physician and hygiene specialist.
+
+At the time of a local cholera outbreak at the Broad Street in London in that year, Snow did not know the exact source of cholera and called it ‘cholera poison’ in a book he published in 1856 ^[4]^. Interestingly, the Italian Filippo Pacini managed to isolate the bacterium causing cholera, *Vibrio cholerae*, in 1854 – the same year that Snow investigated the outbreak ^[5]^. Although it was not until 1884 that *V. cholerae* was formally given its name by the German Robert Koch ^[6]^.
+
+In his book about the ‘cholera poison’, Snow famously wrote ^[4]^:
+
+> “There is no doubt that the mortality was much diminished, as I said before, by the flight of the population, which commenced soon after the outbreak; but the attacks had so far diminished before the use of the water was stopped, that it is impossible to decide whether the well still contained the cholera poison in an active state, or whether, from some cause, the water had become free from it.”
+
+
+## References {-}
+
+[1] Hays JN. Epidemics and pandemics: their impacts on human history. Santa Barbara, Calif.; 2005.
+[2] Paneth N, Vinten-Johansen P, Brody H, Rip M. A rivalry of foulness: official and unofficial investigations of the London cholera epidemic of 1854. Am J Public Health 1998;88:1545–53. doi:10.2105/AJPH.88.10.1545.
+[3] Office for National Statistics. Deaths with COVID-19 on the death certificate. 5 March 2021 2021. https://coronavirus.data.gov.uk/details/deaths (accessed March 21, 2021).
+[4] Snow J. On the Mode of Communication of Cholera. Edinb Med J 1856;1:668–70.
+[5] Pacini F. Osservazioni microscopiche e deduzioni patologiche sul cholera asiatico. Gazz Medica Ital Toscana 1854;4:397–401.
+[6] Howard-Jones N. Robert Koch and the cholera vibrio: a centenary. BMJ 1984;288:379–81. doi:10.1136/bmj.288.6414.379.
+[7] World Health Organization. Antimicrobial resistance Fact sheet N°194. April 2014 2014. https://www.who.int/mediacentre/factsheets/fs194/en/ (accessed March 21, 2021).
+[8] O’Neill J. Antimicrobial Resistance: Tackling a Crisis for the Health and Wealth of Nations.
+Rev Antimicrob Resist 2014:1–16.
+[9] de Kraker MEA, Stewardson AJ, Harbarth S. Will 10 Million People Die a Year due to Antimicrobial Resistance by 2050? PLOS Med 2016;13:e1002184. doi:10.1371/journal.pmed.1002184.
+
+
+
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(introduction).
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.

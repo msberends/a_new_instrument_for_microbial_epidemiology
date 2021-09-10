@@ -141,7 +141,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#short-summary-250-words"><i class="fa fa-check"></i>Short summary (250 words)</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#microbial-epidemiology"><i class="fa fa-check"></i><b>1.1</b> Microbial Epidemiology</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -164,6 +168,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
+<div id="microbial-epidemiology" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Microbial Epidemiology</h2>
+<p>Epidemiology is the medical scientific field that investigates all the factors that determine the presence or absence of diseases and disorders. While many subspecialties within this field exist nowadays, such as veterinary epidemiology and cardiovascular epidemiology, its development started with an infectious disease. Between 1846 and 1860, the world endured the third cholera pandemic, taking assumably millions of lives <sup>[1]</sup>. The year 1854 was considered the worst year, when 23,000 people died in the United Kingdom, out of 16 million inhabitants (0.14%) <sup>[2]</sup>. As a side note, this is still quite less than the 146,000 UK deaths due to COVID-19 out of 56 million inhabitants (0.26%) until March 2021 <sup>[3]</sup>. But 1854 was also the year that the basis was laid for the field of epidemiology by John Snow, an English physician and hygiene specialist.</p>
+<p>At the time of a local cholera outbreak at the Broad Street in London in that year, Snow did not know the exact source of cholera and called it ‘cholera poison’ in a book he published in 1856 <sup>[4]</sup>. Interestingly, the Italian Filippo Pacini managed to isolate the bacterium causing cholera, <em>Vibrio cholerae</em>, in 1854 – the same year that Snow investigated the outbreak <sup>[5]</sup>. Although it was not until 1884 that <em>V. cholerae</em> was formally given its name by the German Robert Koch <sup>[6]</sup>.</p>
+<p>In his book about the ‘cholera poison,’ Snow famously wrote <sup>[4]</sup>:</p>
+<blockquote>
+<p>“There is no doubt that the mortality was much diminished, as I said before, by the flight of the population, which commenced soon after the outbreak; but the attacks had so far diminished before the use of the water was stopped, that it is impossible to decide whether the well still contained the cholera poison in an active state, or whether, from some cause, the water had become free from it.”</p>
+</blockquote>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<p>[1] Hays JN. Epidemics and pandemics: their impacts on human history. Santa Barbara, Calif.; 2005.
+[2] Paneth N, Vinten-Johansen P, Brody H, Rip M. A rivalry of foulness: official and unofficial investigations of the London cholera epidemic of 1854. Am J Public Health 1998;88:1545–53. <a href="doi:10.2105/AJPH.88.10.1545" class="uri">doi:10.2105/AJPH.88.10.1545</a>.
+[3] Office for National Statistics. Deaths with COVID-19 on the death certificate. 5 March 2021 2021. <a href="https://coronavirus.data.gov.uk/details/deaths" class="uri">https://coronavirus.data.gov.uk/details/deaths</a> (accessed March 21, 2021).
+[4] Snow J. On the Mode of Communication of Cholera. Edinb Med J 1856;1:668–70.
+[5] Pacini F. Osservazioni microscopiche e deduzioni patologiche sul cholera asiatico. Gazz Medica Ital Toscana 1854;4:397–401.
+[6] Howard-Jones N. Robert Koch and the cholera vibrio: a centenary. BMJ 1984;288:379–81. <a href="doi:10.1136/bmj.288.6414.379" class="uri">doi:10.1136/bmj.288.6414.379</a>.
+[7] World Health Organization. Antimicrobial resistance Fact sheet N°194. April 2014 2014. <a href="https://www.who.int/mediacentre/factsheets/fs194/en/" class="uri">https://www.who.int/mediacentre/factsheets/fs194/en/</a> (accessed March 21, 2021).
+[8] O’Neill J. Antimicrobial Resistance: Tackling a Crisis for the Health and Wealth of Nations.
+Rev Antimicrob Resist 2014:1–16.
+[9] de Kraker MEA, Stewardson AJ, Harbarth S. Will 10 Million People Die a Year due to Antimicrobial Resistance by 2050? PLOS Med 2016;13:e1002184. <a href="doi:10.1371/journal.pmed.1002184" class="uri">doi:10.1371/journal.pmed.1002184</a>.</p>
 <p>You can label chapter and section titles using <code>{#label}</code> after them, e.g., we can reference Chapter <a href="introduction.html#introduction">1</a>.</p>
 <p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
@@ -334,6 +359,7 @@ Figure 1.1: Here is a nice figure!
 </tbody>
 </table>
 
+</div>
 </div>
             </section>
 
