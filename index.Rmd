@@ -2,7 +2,7 @@
 title: "A New Instrument for Microbial Epidemiology"
 subtitle: "Empowering Antimicrobial Resistance Data Analysis"
 author: "Matthijs S. Berends"
-date: "25 August 2021"
+# date: "25 August 2021"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -14,6 +14,24 @@ github-repo: msberends/a_new_instrument_for_microbial_epidemiology
 description: "This is the PhD thesis of the author."
 ---
 
-# Prerequisites {-}
+# Preamble {-}
 
-txt
+This is the integral PhD thesis 'A New Instrument for Microbial Epidemiology' (DOI [10.33612/diss.177417131](https://doi.org/10.33612/diss.177417131)) by [Matthijs S. Berends](https://www.rug.nl/staff/m.s.berends), which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021.
+
+All texts were copied from the printed version 'as is'; no modifications were made.
+
+### Short summary (250 words) {-}
+
+Treating infectious diseases requires insights into the microorganisms causing infectious diseases. Antimicrobial resistance (AMR) in microorganisms limits treatment possibilities and poses an enormous healthcare problem worldwide. The spread and AMR patterns of microorganisms, risk factors for infection, and preventive and control measures of infectious disease are studied within the field of Microbial Epidemiology, a cross-over field between Epidemiology and Clinical Microbiology. For analysing the spread and AMR patterns of microorganisms, however, no standardised method previously existed. This thesis showcases the development and applied use of a new instrument to analyse AMR data: the AMR package for R. From multiple viewpoints, the AMR package and its advantages are put into perspective: from a technical viewpoint, from an infection management viewpoint and from a clinical viewpoint. These combined provide a common ground for comprehending what the AMR package could yield in the field and how it can set a new empowered starting point for future applications of microbial epidemiology, in clinical and research settings alike. This thesis subsequently elaborates on these multiple viewpoints by illustrating the use of this new instrument in epidemiological research projects in the Dutch-German cross-border region to better understand the occurrence and AMR patterns of microorganisms on a (eu)regional level. In conclusion, this thesis shows the added value of a consistent data-analytical instrument to prepare and analyse AMR data in a full-region approach, that can also be used in clinical settings to obtain novel insights on AMR patterns.
+
+# Colophon {-}
+
+Cover design: Matthijs Berends (images used with permission)  
+Layout: Matthijs Berends  
+Printing: Gildeprint – www.gildeprint.nl
+
+The work described within this thesis was supported by (1) the Certe Medical Diagnostics and Advice Foundation, (2) the INTERREG V A (202085) funded project EurHealth-1Health (http://www.eurhealth1health.eu), part of a Dutch-German cross-border network supported by the European Commission, the Dutch Ministry of Health, Welfare and Sport, the Ministry of Economy, Innovation, Digitalisation and Energy of the German Federal State of North Rhine-Westphalia, and the Ministry for National and European Affairs and Regional Development of the German Federal State of Lower Saxony, (3) the European Union’s Horizon 2020 Research and Innovation Programme under the Marie Skłodowska-Curie Grant Agreement 713660 (MSCA-COFUND-2015-DP “Pronkjewail”), and (4) the European Society for Clinical Microbiology and Infectious Diseases (ESCMID) through the ESCMID Study Group for Antimicrobial Stewardship (ESGAP).
+
+Printing of this thesis was financially supported by the Certe Medical Diagnostics and Advice Foundation. This support is greatly appreciated.
+
+**Copyright © 2021 by Matthias Simeon Berends.** All rights reserved. Any unauthorised reprint or use of this material is prohibited. No parts of this thesis may be reproduced, stored, or transmitted in any form or by any means, without written permission of the author or, when appropriate, the publishers of the publications.
