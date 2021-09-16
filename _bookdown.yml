@@ -4,3 +4,4 @@ language:
   ui:
   chapter_name: "Chapter "
 delete_merged_file: true
+# view: https://github.com/msberends/a_new_instrument_for_microbial_epidemiology/blob/main/%s

@@ -1,14 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/* default by bookdown - start here */
 p.caption {
   color: #777;
     margin-top: 10px;
 }
 p code {
-  white-space: inherit;
+  white-space: pre;
 }
 pre {
   word-break: normal;
   word-wrap: normal;
 }
 pre code {
-  white-space: inherit;
+  white-space: pre;
+}
+/* default by bookdown - end here */
+
+.book .book-header h1 {
+  /* title of book in header, make always visible */
+  transition: none;
+  opacity: 1;
+}
+
+#contents * {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
+  font-size: 1.1rem;
+}
+.book-body sup {
+  /* inline references */
+  font-size: 60% !important;
+}
+.book-body p {
+  text-align: justify !important;
+  font-family: 'EB Garamond', serif !important;
+  /* font-weight: 500; */
+  font-size: 1.8rem !important;
+}
+.book-body .caption, tbl {
+  color: black;
+  font-size: 1.5rem !important;
+  line-height: 1.2;
+}
+.book-body li {
+  text-align: justify !important;
+  font-family: 'EB Garamond', serif !important;
+  font-size: 1.6rem !important;
+}
+.book-body h1,h2 {
+  font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue" !important;
+  text-transform: uppercase;
+}
+.book-body h1 {
+  font-size: 1.4em !important;
+}
+.book-body h2 {
+  font-size: 1.25em !important;
+  margin-bottom: 0.25rem !important;
+}
+.book-body h3 {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
+  font-size: 1.1em !important;
+  margin-bottom: 0 !important;
 }

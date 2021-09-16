@@ -1,4 +1,15 @@
-fig:nice-fig
-tab:nice-tab
+fig:fig1-1
+fig:fig1-2
+fig:fig1-3
+fig:fig1-4
+fig:fig1-5
 introduction
 microbial-epidemiology
+antimicrobial-resistance-in-microorganisms
+laboratory-diagnostics
+interpretation-of-raw-results
+multi-drug-resistant-organisms
+surveillance-programs
+data-analysis-using-r
+setting-for-this-thesis
+aim-of-this-thesis-and-introduction-to-its-chapters

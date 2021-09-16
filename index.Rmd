@@ -2,7 +2,9 @@
 title: "A New Instrument for Microbial Epidemiology"
 subtitle: "Empowering Antimicrobial Resistance Data Analysis"
 author: "Matthijs S. Berends"
-# date: "25 August 2021"
+date: "25 August 2021"
+cover-image: "images/cover.jpg"
+url: "https://msberends.github.io/a_new_instrument_for_microbial_epidemiology"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -11,8 +13,36 @@ bibliography: [packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: msberends/a_new_instrument_for_microbial_epidemiology
-description: "This is the PhD thesis of the author."
+description: "This is the integral PhD thesis 'A New Instrument for Microbial Epidemiology' (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021."
 ---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  echo = FALSE,
+  fig.cap = "",
+  out.width = "100%",
+  fig.asp = 0.75,
+  fig.align = "center"
+)
+
+insert_graphic <- function(path, ...) {
+  if (knitr::is_html_output() && grepl("[.]svg$", basename(path), ignore.case = TRUE)) {
+    structure(path, class = c("knit_image_paths", "knit_asis"))
+  } else {
+    knitr::include_graphics(path, ...)
+  }
+}
+
+insert_graphic("images/cover.jpg")
+
+# find 
+# \[([0-9,-–]+)\]
+# replace with
+# ^[\1]^
+
+
+```
 
 # Preamble {-}
 
@@ -35,3 +65,66 @@ The work described within this thesis was supported by (1) the Certe Medical Dia
 Printing of this thesis was financially supported by the Certe Medical Diagnostics and Advice Foundation. This support is greatly appreciated.
 
 **Copyright © 2021 by Matthias Simeon Berends.** All rights reserved. Any unauthorised reprint or use of this material is prohibited. No parts of this thesis may be reproduced, stored, or transmitted in any form or by any means, without written permission of the author or, when appropriate, the publishers of the publications.
+
+# Contents {-}
+
+**Section I**
+
+1. **General Introduction**
+
+2. **Diagnostic Stewardship: Sense or Nonsense?!**  
+  Berends MS\*, Luz CF\*, Wouthuyzen-Bakker M, Märtson AG, Alffenaar JW, Dik JWH, Glasner C, Sinha BNM  
+  *Dutch Journal of Clinical Microbiology (2018) 26;3*
+
+3. **Introducing a New, Free, and Independent Method for Standardised, Reproducible and Reliable Analyses of Antimicrobial Resistance Data**  
+  Berends MS, Luz CF, Sinha BNM, Glasner C^‡^, Friedrich AW^‡^  
+  *In preparation*
+
+**Section II**
+
+4. **AMR - An R Package for Working with Antimicrobial Resistance Data**  
+  Berends MS\*, Luz CF\*, Friedrich AW, Sinha BNM, Albers CJ, Glasner C  
+  *Journal of Statistical Software (2021), ahead of print*
+
+5. **Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship**  
+  Luz CF, Berends MS, Dik JWH, Lokate M, Pulcini C, Glasner C, Sinha BNM  
+  *Journal of Medical Internet Research (2019) 21;6, e12843*
+
+6. **Better Antimicrobial Resistance Data Analysis and Reporting in Less Time**  
+  Berends MS\*, Luz CF\*, Zhou X, Friedrich AW, Lokate ML, Sinha BNM^‡^, Glasner C^‡^  
+  *medRxiv [preprint] (2021), 21257599*
+
+**Section III**
+
+7. **Trends in Occurrence and Phenotypic Resistance of Coagulase-Negative Staphylococci (CoNS) Found in Blood in the Northern Netherlands between 2013 and 2019**  
+  Berends MS, Luz CF, Ott A, Andriesse GI, Becker K, Glasner C^‡^, Friedrich AW^‡^  
+  *In preparation*
+
+8. **Defining Multidrug Resistance of Gram-Negative Bacteria in the Dutch-German Border Region-Impact of National Guidelines**  
+  Köck R, Siemer P, Esser J, Kampmeier S, Berends MS, Glasner C, Arends JP, Becker K, Friedrich AW  
+  *Microorganisms (2018) 6;1*
+
+9. **Changing Epidemiology of Methicillin-Resistant *Staphylococcus aureus* in	42 Hospitals in the Dutch-German Border Region, 2012 to 2016: Results of the Search-and-Follow-Policy**  
+  Jurke A, Daniels-Haardt I, Silvis W, Berends MS, Glasner C, Becker K, Köck R, Friedrich AW  
+  *Eurosurveillance (2019) 24;15*
+
+10. **A Prospective Multicentre MDRO Screening Study on ICUs in the Dutch-German Cross-Border Region (2017-2018): The Importance of Healthcare Structures**  
+  Berends MS\*, Glasner C\*, Becker K, Esser J, Gieffers J, Jurke A, Kampinga G, Kampmeier S, Klont R, Köck R, Al Naemi N, Ott A, Ruis G, Saris K, Tami A, Van Zeijl J, Von Müller L, Voss A, Waar K, Friedrich AW  
+  *Eurosurveillance (2021), ahead of print*
+
+**Section IV**
+
+11. **Summary and Future Perspectives**
+
+**Gearfetting** yn Frysk  
+**Samenvatting** in het Nederlands  
+**Zusammenfassung** auf Deutsch  
+**Alphabetical list of published work**  
+**Alphabetical list of related presentations**  
+**Acknowledgements** / Tankwurd / Dankwoord / Danksagung  
+**Curriculum Vitae**
+
+----
+
+\*	Equal contribution  
+^‡^	Equal contribution
