@@ -28,8 +28,13 @@ knitr::opts_chunk$set(
 
 insert_graphic <- function(path, ...) {
   if (knitr::is_html_output() && grepl("[.]svg$", basename(path), ignore.case = TRUE)) {
+    # support SVG files for HTML putput
     structure(path, class = c("knit_image_paths", "knit_asis"))
+  } else if (!knitr::is_html_output() && file.exists(gsub("[.][a-z]+$", ".pdf", path, ignore.case = TRUE))) {
+    # use PDF for LaTeX output when available
+    knitr::include_graphics(gsub("[.][a-z]+$", ".pdf", path, ignore.case = TRUE), ...)
   } else {
+    # otherwise, use standard function
     knitr::include_graphics(path, ...)
   }
 }

@@ -2,10 +2,11 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: subsection
       before: |
-        <li><a href="./">A New Instrument for Microbial Epidemiology</a></li>
-      after: |
         <li><a href="https://doi.org/10.33612/diss.177417131" target="blank"><img src="images/cover.jpg" style="width:90%; margin-left:5%;"></a></li>
+      after: |
+        <li class="copyright">© 2021 Matthijs Berends</li>
 #    edit: https://github.com/msberends/a_new_instrument_for_microbial_epidemiology/edit/master/%s
     download: ["pdf", "epub"]
 
@@ -14,7 +15,7 @@ bookdown::pdf_book:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: no
+  keep_tex: yes
 
 bookdown::epub_book: default
 

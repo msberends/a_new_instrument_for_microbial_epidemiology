@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
+
 /* default by bookdown - start here */
 p.caption {
   color: #777;
@@ -17,18 +18,46 @@ pre code {
 }
 /* default by bookdown - end here */
 
+/* chapter title numbers */
+.book-body h1 .header-section-number {
+  font-size: 2em;
+}
+.book-body h1 .header-section-number:after {
+  content: "\a";
+}
+.book-body h1 .header-section-number:before {
+  content: "Chapter ";
+}
+.book-body h1 .header-section-number {
+  font-weight: inherit;
+  white-space: pre-wrap;
+}
+/* all other chapter numbers */
+.header-section-number,
+li {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* so no condensed bold */
+  font-weight: normal;
+}
+.header-section-number:after,
+li.chapter b:after{
+  content: ".";
+}
+
 .book .book-header h1 {
   /* title of book in header, make always visible */
   transition: none;
   opacity: 1;
+  color: black;
 }
 
+/*
 #contents * {
   font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
   font-size: 1.1rem;
 }
+*/
 .book-body sup {
-  /* inline references */
+  /* inline references such as [1] */
   font-size: 60% !important;
 }
 .book-body p {
@@ -37,22 +66,28 @@ pre code {
   /* font-weight: 500; */
   font-size: 1.8rem !important;
 }
-.book-body .caption, tbl {
+.book-body .caption,
+.book-body tbl {
   color: black;
   font-size: 1.5rem !important;
   line-height: 1.2;
 }
 .book-body li {
-  text-align: justify !important;
   font-family: 'EB Garamond', serif !important;
+  font-size: 1.8rem !important;
+}
+[id^="references"] li {
+  /* stylise references */
+  text-align: justify !important;
   font-size: 1.6rem !important;
 }
-.book-body h1,h2 {
+.book-body h1,
+.book-body h2 {
   font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue" !important;
   text-transform: uppercase;
 }
 .book-body h1 {
-  font-size: 1.4em !important;
+  font-size: 1.6em !important;
 }
 .book-body h2 {
   font-size: 1.25em !important;
