@@ -11,6 +11,7 @@ fig:fig2-5
 fig:fig3-1
 fig:fig3-2
 fig:fig4-1
+fig:fig5-1
 ch01-introduction
 microbial-epidemiology
 antimicrobial-resistance-in-microorganisms
