@@ -1,4 +1,4 @@
-# Diagnostic Stewardship: Sense or Nonsense?! {#diagnostic-stewardship}
+# Diagnostic Stewardship: Sense or Nonsense?! {#ch02-diagnostic-stewardship}
 
 Published in Dutch Journal of Clinical Microbiology, 2019 Sep 27, 26:3  
 (Nederlands Tijdschrift voor Medische Microbiologie; original work in Dutch)
@@ -21,11 +21,9 @@ Diagnostic stewardship or diagnostic stewardship programme (DSP), a trending top
 
 Although the term DSP was first mentioned in an indexed PubMed article in 2016, articles on antimicrobial stewardship (ASP) have been appearing for 15 years (Figure \@ref(fig:fig2-1)).
 
-```{r fig2-1, fig.cap = "The increase of articles indexed in PubMed. Search strategies: 'antimicrobial stewardship'[Title/Abstract]; 'diagnostic stewardship'[Title/Abstract]; 'antimicrobial resistance'[Title/Abstract]. Source: https://www.ncbi.nlm.nih.gov/pubmed/ (assessed: 2018-05-31).", out.width = "80%"}
+```{r fig2-1, fig.cap = "The increase of articles indexed in PubMed. Search strategies: 'antimicrobial stewardship'[Title/Abstract]; 'diagnostic stewardship'[Title/Abstract]; 'antimicrobial resistance'[Title/Abstract]. Source: https://www.ncbi.nlm.nih.gov/pubmed/ (assessed: 2018-05-31). * Extrapolation based on count from 2018-01-01 to 2018-05-31.", out.width = "80%"}
 insert_graphic("images/02-01.jpg")
 ```
-
-\* Extrapolation based on count from 2018-01-01 to 2018-05-31.
 
 Nevertheless, the concept of DSP is neither intended to replace other stewardship concepts (in particular ASP) nor to be an alternative. DSP concerns decision making and goes beyond microbiological diagnostics alone. Kahneman *et al.* ^[2]^ said about decision making:
 

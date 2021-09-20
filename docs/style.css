@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 /* default by bookdown - start here */
 p.caption {
@@ -20,13 +20,13 @@ pre code {
 
 /* chapter title numbers */
 .book-body h1 .header-section-number {
-  font-size: 2em;
+  font-size: 1.25em;
 }
 .book-body h1 .header-section-number:after {
   content: "\a";
 }
 .book-body h1 .header-section-number:before {
-  content: "Chapter ";
+  content: "CHAPTER ";
 }
 .book-body h1 .header-section-number {
   font-weight: inherit;
@@ -66,12 +66,45 @@ li.chapter b:after{
   /* font-weight: 500; */
   font-size: 1.8rem !important;
 }
-.book-body .caption,
-.book-body tbl {
+.book .book-body .section * {
   color: black;
-  font-size: 1.5rem !important;
+}
+.book-body p code {
+  font-size: 1.3rem !important;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  white-space: unset;
+}
+.book-body p code:before,
+.book-body p code:after,
+.book-body li code:before,
+.book-body li code:after {
+  content: "" !important;
+  letter-spacing: normal !important;
+}
+.book-body .caption,
+.book-body .tbl-caption {
+  color: black;
+  font-size: 1.6rem !important;
   line-height: 1.2;
 }
+.book-body .caption {
+  margin-top: 0px !important;
+  margin-bottom: 3em !important;
+}
+.book-body .tbl-caption {
+  margin-top: 3em !important;
+  margin-bottom: 0px !important;
+}
+.book-body .figure {
+  /* this will only be in fig:fig chunks, not in fig:tbl chunks */
+  margin-top: 3em !important;
+}
+img[src*=-t] {
+  /* this will only be in fig:tbl chunks, not in fig:fig chunks */
+  margin-bottom: 3em !important;
+}
+
 .book-body li {
   font-family: 'EB Garamond', serif !important;
   font-size: 1.8rem !important;
@@ -84,17 +117,64 @@ li.chapter b:after{
 .book-body h1,
 .book-body h2 {
   font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue" !important;
-  text-transform: uppercase;
 }
 .book-body h1 {
-  font-size: 1.6em !important;
+  font-size: 1.8em !important;
 }
 .book-body h2 {
   font-size: 1.25em !important;
   margin-bottom: 0.25rem !important;
+  text-transform: uppercase;
 }
 .book-body h3 {
   font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
   font-size: 1.1em !important;
   margin-bottom: 0 !important;
+}
+.book-body h4 .header-section-number {
+  /* I didn't have numbers for level 4 */
+  display: none;
+}
+.book-body h4 {
+  font-size: 1em !important;
+  margin-bottom: 0px !important;
+  font-style: italic !important;
+}
+.book-body .sourceCode.r span {
+  color: black;
+}
+.book-body .sourceCode.r span .co {
+  color: grey;
+  font-style: normal !important;
+}
+.book-body pre,
+.book-body pre *,
+.book-body code,
+.book-body code * {
+  font-family: "Fira Code",monospace !important;
+  line-height: 2rem;
+  background: #ebebeb !important;
+}
+.book-body p note {
+  color: #9a99a2;
+  font-variant: small-caps;
+}
+.book-body .title {
+  font-size: 3em !important;
+  margin-bottom: 0.2rem !important;
+  text-align: center !important;
+}
+.book-body .subtitle {
+  font-size: 1.8em !important;
+  text-transform: none;
+  margin-top: 0px !important;
+  text-align: center !important;
+}
+.book-body .author,
+.book-body .date {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
+  font-size: 1.25em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  text-align: center !important;
 }

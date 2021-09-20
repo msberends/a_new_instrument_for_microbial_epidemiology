@@ -1,6 +1,6 @@
-# Introducing a New, Free, and Independent Method for Standardised, Reproducible and Reliable Analyses of Antimicrobial Resistance Data {#introducing-method}
+# Introducing a New, Free, and Independent Method for Standardised, Reproducible and Reliable Analyses of Antimicrobial Resistance Data {#ch03-introducing-new-method}
 
-In preparation
+<p>In preparation <note>(as of date of PhD defence: 25 August 2021)</note></p>
 
 Berends MS ^1,2^, Luz CF ^2^, Sinha BNM ^2^, Glasner C ^2‡^, Friedrich AW ^2‡^
 

@@ -1,4 +1,4 @@
-# General Introduction {#introduction}
+# General Introduction {#ch01-introduction}
 
 ## Microbial epidemiology
 
@@ -86,12 +86,11 @@ Although surveillance programs allow for signalling significant differences and 
 
 On the local level, clinical microbiology laboratories should communicate AMR surveillance data to healthcare providers in an understandable manner. Since MDROs can migrate between healthcare institutions, countries and continents by migrating people, local healthcare providers should be aware of local, regional, national and international surveillance program implementations and their ensuing results on AMR. On the other hand, such surveillance program implementations should be well-designed, well-maintained, longitudinal, and involve an appropriate collaboration with local laboratories over time ^[27]^.
 
-<tbl>Table 1. Uses of antibiotic resistance surveillance system data by hospitals, university researchers, pharmaceutical companies and governments.</tbl>
+<p class="tbl-caption">Table 1. Uses of antibiotic resistance surveillance system data by hospitals, university researchers, pharmaceutical companies and governments. From Critchley *et al.*, 2004 ^[27]^.</p>
 
 ```{r tbl1-1}
 insert_graphic("images/01-t01.svg")
 ```
-From Critchley *et al.*, 2004 ^[27]^.
 
 As an example, ISIS-AR (Infectious disease Surveillance Information System for Antibiotic Resistance) is a Dutch national surveillance program, for which a large number of the Dutch clinical microbiology laboratories provide anonymised data on AMR to the National Institute for Public Health and the Environment (Rijksinstituut voor Volksgezondheid en Milieu, RIVM) ^[40]^. In Germany, ARS (Antibiotic Resistance Surveillance) is a similar laboratory-based national surveillance program, that attempts to enable differential statements according to structural characteristics of health care and regions ^[41,42]^. Both these national surveillance programs provide data for EARS-Net and GLASS of the WHO ^[37,43]^.
 

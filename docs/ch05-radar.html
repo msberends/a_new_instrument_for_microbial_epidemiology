@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship | A New Instrument for Microbial Epidemiology</title>
+  <meta name="description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship | A New Instrument for Microbial Epidemiology" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology" />
+  <meta property="og:image" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology/images/cover.jpg" />
+  <meta property="og:description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="github-repo" content="msberends/a_new_instrument_for_microbial_epidemiology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship | A New Instrument for Microbial Epidemiology" />
+  
+  <meta name="twitter:description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="twitter:image" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology/images/cover.jpg" />
+
+<meta name="author" content="Matthijs S. Berends" />
+
+
+<meta name="date" content="2021-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch04-amr-r-package.html"/>
+
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://doi.org/10.33612/diss.177417131" target="blank"><img src="images/cover.jpg" style="width:90%; margin-left:5%;"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preamble</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#short-summary-250-words"><i class="fa fa-check"></i>Short summary (250 words)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="ch01-introduction.html"><a href="ch01-introduction.html"><i class="fa fa-check"></i><b>1</b> General Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch01-introduction.html"><a href="ch01-introduction.html#microbial-epidemiology"><i class="fa fa-check"></i><b>1.1</b> Microbial epidemiology</a></li>
+<li class="chapter" data-level="1.2" data-path="ch01-introduction.html"><a href="ch01-introduction.html#antimicrobial-resistance-in-microorganisms"><i class="fa fa-check"></i><b>1.2</b> Antimicrobial resistance in microorganisms</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="ch01-introduction.html"><a href="ch01-introduction.html#laboratory-diagnostics"><i class="fa fa-check"></i><b>1.2.1</b> Laboratory diagnostics</a></li>
+<li class="chapter" data-level="1.2.2" data-path="ch01-introduction.html"><a href="ch01-introduction.html#interpretation-of-raw-results"><i class="fa fa-check"></i><b>1.2.2</b> Interpretation of raw results</a></li>
+<li class="chapter" data-level="1.2.3" data-path="ch01-introduction.html"><a href="ch01-introduction.html#multi-drug-resistant-organisms"><i class="fa fa-check"></i><b>1.2.3</b> Multi-drug resistant organisms</a></li>
+<li class="chapter" data-level="1.2.4" data-path="ch01-introduction.html"><a href="ch01-introduction.html#surveillance-programs"><i class="fa fa-check"></i><b>1.2.4</b> Surveillance programs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="ch01-introduction.html"><a href="ch01-introduction.html#data-analysis-using-r"><i class="fa fa-check"></i><b>1.3</b> Data analysis using R</a></li>
+<li class="chapter" data-level="1.4" data-path="ch01-introduction.html"><a href="ch01-introduction.html#setting-for-this-thesis"><i class="fa fa-check"></i><b>1.4</b> Setting for this thesis</a></li>
+<li class="chapter" data-level="1.5" data-path="ch01-introduction.html"><a href="ch01-introduction.html#aim-of-this-thesis-and-introduction-to-its-chapters"><i class="fa fa-check"></i><b>1.5</b> Aim of this thesis and introduction to its chapters</a></li>
+<li class="chapter" data-level="" data-path="ch01-introduction.html"><a href="ch01-introduction.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html"><i class="fa fa-check"></i><b>2</b> Diagnostic Stewardship: Sense or Nonsense?!</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="2.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#case-1"><i class="fa fa-check"></i><b>2.1.1</b> Case 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#case-2"><i class="fa fa-check"></i><b>2.1.2</b> Case 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#the-general-concept"><i class="fa fa-check"></i><b>2.2</b> The general concept</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#diagnostics"><i class="fa fa-check"></i><b>2.2.1</b> ‘Diagnostics’</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#dsp-in-the-microbiological-laboratory"><i class="fa fa-check"></i><b>2.2.2</b> DSP in the microbiological laboratory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#dsp-as-process-optimisation"><i class="fa fa-check"></i><b>2.2.3</b> DSP as process optimisation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#multidisciplinary-aspects-of-dsp-and-infection-management"><i class="fa fa-check"></i><b>2.2.4</b> Multidisciplinary aspects of DSP and infection management</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#conclusion"><i class="fa fa-check"></i><b>2.3</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#financing"><i class="fa fa-check"></i>Financing</a></li>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html"><i class="fa fa-check"></i><b>3</b> Introducing a New, Free, and Independent Method for Standardised, Reproducible and Reliable Analyses of Antimicrobial Resistance Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="3.1" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#standardising-amr-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Standardising AMR data analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#comparison-with-existing-software-methods"><i class="fa fa-check"></i><b>3.3</b> Comparison with existing software methods</a></li>
+<li class="chapter" data-level="3.4" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#user-feedback"><i class="fa fa-check"></i><b>3.4</b> User feedback</a></li>
+<li class="chapter" data-level="3.5" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#conclusion-1"><i class="fa fa-check"></i><b>3.5</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html"><i class="fa fa-check"></i><b>4</b> <code>AMR</code> - An <code>R</code> Package for Working with Antimicrobial Resistance Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="4.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.2</b> Antimicrobial resistance data</a></li>
+<li class="chapter" data-level="4.3" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#antimicrobial-resistance-data-transformation"><i class="fa fa-check"></i><b>4.3</b> Antimicrobial resistance data transformation</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-taxonomically-valid-microorganism-names"><i class="fa fa-check"></i><b>4.3.1</b> Working with taxonomically valid microorganism names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-antimicrobial-names-or-codes"><i class="fa fa-check"></i><b>4.3.2</b> Working with antimicrobial names or codes</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-antimicrobial-susceptibility-test-results"><i class="fa fa-check"></i><b>4.3.3</b> Working with antimicrobial susceptibility test results</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#interpretative-rules-by-eucast"><i class="fa fa-check"></i><b>4.3.4</b> Interpretative rules by EUCAST</a></li>
+<li class="chapter" data-level="4.3.5" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-defined-daily-doses-ddd"><i class="fa fa-check"></i><b>4.3.5</b> Working with defined daily doses (DDD)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#enhancing-antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.4</b> Enhancing antimicrobial resistance data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#determining-first-isolates"><i class="fa fa-check"></i><b>4.4.1</b> Determining first isolates</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#determining-multi-drug-resistant-organisms-mdro"><i class="fa fa-check"></i><b>4.4.2</b> Determining multi-drug resistant organisms (MDRO)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#analysing-antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.5</b> Analysing antimicrobial resistance data</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#calculation-of-antimicrobial-resistance"><i class="fa fa-check"></i><b>4.5.1</b> Calculation of antimicrobial resistance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#design-decisions"><i class="fa fa-check"></i><b>4.6</b> Design decisions</a></li>
+<li class="chapter" data-level="4.7" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#reproducible-example"><i class="fa fa-check"></i><b>4.7</b> Reproducible example</a></li>
+<li class="chapter" data-level="4.8" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#discussion"><i class="fa fa-check"></i><b>4.8</b> Discussion</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#computational-details"><i class="fa fa-check"></i>Computational Details</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#references-3"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#appendix-a-included-data-sets"><i class="fa fa-check"></i>Appendix A: Included Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch05-radar.html"><a href="ch05-radar.html"><i class="fa fa-check"></i><b>5</b> Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#abstract-3"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="ch05-radar.html"><a href="ch05-radar.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ch05-radar.html"><a href="ch05-radar.html#background-1"><i class="fa fa-check"></i><b>5.1.1</b> Background</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ch05-radar.html"><a href="ch05-radar.html#objectives"><i class="fa fa-check"></i><b>5.1.2</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ch05-radar.html"><a href="ch05-radar.html#methods"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="ch05-radar.html"><a href="ch05-radar.html#results"><i class="fa fa-check"></i><b>5.3</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch05-radar.html"><a href="ch05-radar.html#overview"><i class="fa fa-check"></i><b>5.3.1</b> Overview</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch05-radar.html"><a href="ch05-radar.html#application-design"><i class="fa fa-check"></i><b>5.3.2</b> Application Design</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ch05-radar.html"><a href="ch05-radar.html#development-process"><i class="fa fa-check"></i><b>5.3.3</b> Development Process</a></li>
+<li class="chapter" data-level="5.3.4" data-path="ch05-radar.html"><a href="ch05-radar.html#workflow"><i class="fa fa-check"></i><b>5.3.4</b> Workflow</a></li>
+<li class="chapter" data-level="5.3.5" data-path="ch05-radar.html"><a href="ch05-radar.html#customisation"><i class="fa fa-check"></i><b>5.3.5</b> Customisation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ch05-radar.html"><a href="ch05-radar.html#discussion-1"><i class="fa fa-check"></i><b>5.4</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="ch05-radar.html"><a href="ch05-radar.html#principal-findings"><i class="fa fa-check"></i><b>5.4.1</b> Principal Findings</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch05-radar.html"><a href="ch05-radar.html#conclusions"><i class="fa fa-check"></i><b>5.4.2</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#conflicts-of-interests"><i class="fa fa-check"></i>Conflicts of interests</a></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#references-4"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li class="copyright">© 2021 Matthijs Berends</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A New Instrument for Microbial Epidemiology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch05-radar" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship</h1>
+<p>Published in Journal of Medical Internet Research, 2019 (21);6, e12843</p>
+<p>Luz CF 1, Berends MS 1,2, Dik JWH 1, Lokate ML 1, Pulcini C 3,4, Glasner C 1, Sinha BNM 1</p>
+<ol style="list-style-type: decimal">
+<li>University of Groningen, University Medical Center Groningen, Department of Medical Microbiology and Infection Prevention, Groningen, The Netherlands</li>
+<li>Certe Medical Diagnostics and Advice Foundation, Groningen, The Netherlands</li>
+<li>Université de Lorraine, APEMAC, Nancy, France</li>
+<li>Université de Lorraine, CHRU-Nancy, Infectious Diseases Department, Nancy, France</li>
+</ol>
+<div id="abstract-3" class="section level2 unnumbered">
+<h2>Abstract</h2>
+<p>Analysing process and outcome measures for all patients diagnosed with an infection in a hospital, including those suspected of having an infection, requires not only processing of large datasets but also accounting for numerous patient parameters and guidelines. Substantial technical expertise is required to conduct such rapid, reproducible, and adaptable analyses; however, such analyses can yield valuable insights for infection management and antimicrobial stewardship (AMS) teams. The aim of this study was to present the design, development, and testing of RadaR (Rapid analysis of diagnostic and antimicrobial patterns in R), a software app for infection management, and to ascertain whether RadaR can facilitate user-friendly, intuitive, and interactive analyses of large datasets in the absence of prior in-depth software or programming knowledge. RadaR was built in the open-source programming language R, using Shiny, an additional package to implement web-app frameworks in R. It was developed in the context of a 1339-bed academic tertiary referral hospital to handle data of more than 180,000 admissions. RadaR enabled visualisation of analytical graphs and statistical summaries in a rapid and interactive manner. It allowed users to filter patient groups by 17 different criteria and investigate antimicrobial use, microbiological diagnostic use and results including antimicrobial resistance, and outcome in length of stay. Furthermore, with RadaR, results can be stratified and grouped to compare defined patient groups on the basis of individual patient features. AMS teams can use RadaR to identify areas within their institutions that might benefit from increased support and targeted interventions. It can be used for the assessment of diagnostic and therapeutic procedures and for visualizing and communicating analyses. RadaR demonstrated the feasibility of developing software tools for use in infection management and for AMS teams in an open-source approach, thus making it free to use and adaptable to different settings.</p>
+</div>
+<div id="introduction-2" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<div id="background-1" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Background</h3>
+<p>With antimicrobial resistance (AMR) on the rise, efforts are being made worldwide to focus on the preservation of antimicrobials as a precious non-renewable resource. Infection management in the form of antimicrobial stewardship (AMS) programs has emerged as an effective solution to address this global health problem in hospitals. AMS programs are defined as “a coherent set of actions which promote using antimicrobials responsibly” [1]. Stewardship interventions and activities focus on individual patients (personalised medicine and consulting) as well as patient groups or clinical syndromes (guidelines, protocols, information technology infrastructure, and clinical decision support systems) while prioritizing improvement in quality of care and patient safety for any intervention. The appropriate use of antimicrobials based on accurate and timely diagnostics is integral for the successful management of infections. In doing so, the diagnostics contribute to efforts in minimizing AMR by optimizing the use of antimicrobials.</p>
+<p>AMS setups in hospitals are often heterogeneous, but audit and feedback to assess the goals are essential parts of most programs, and they are included in international guidelines and reviews [2-7]. Important data for AMS programs include, for example, days of therapy (DOT), daily defined doses (DDD), admission dates, length of stay (LOS), and adherence to local or national diagnostic, therapeutic, or infection management guidelines [1]. Clinical outcomes, quality of care, or consumption of hospital resources can be measured, for example, using mortality data or surrogate parameters such as LOS. The collection of these data is facilitated by electronic health records (EHRs) and administrative local databases. Notably, administrative data have also been shown to be a reliable source for assessing clinical outcomes [8].</p>
+<p>EHRs usually offer quick insights into useful infection management data on the individual patient level. However, easy access to analyse patient groups (e.g., stratified by departments or wards, specific antimicrobials, or diagnostic procedures used) is difficult to implement in daily practice. It is even more challenging to rapidly analyse larger patient populations (e.g., spread over multiple specialties) even though this information might be available. Nevertheless, this is vital for meaningful analysis, including possible confounders and pattern recognition across different populations. Moreover, when aggregated data are available, it is often not possible to trace individual patients, and analyses lack the ability to be further adjusted or stratified.</p>
+<p>AMS teams are multidisciplinary, and they act beyond the borders of single specialties [9]. They are usually understaffed, with limited data analysis support [10,11]. Therefore, they need user-friendly and time-saving data analysis resources, without the need for profound technical expertise once the system is set up. Aggregating and linking data of antimicrobial use, guideline adherence, and clinical outcomes at the institutional level can build the basis for important insights for these teams. These could be used to identify areas within hospitals that might benefit most from supportive AMS interventions (e.g., subspecialties with lower guideline adherence or unusual patterns of antimicrobial use). Moreover, feedback from these data could help physicians better understand their patient population as a whole; in addition, hospital administration could allocate resources in a more targeted fashion.</p>
+<p>Furthermore, aggregated data and simultaneous analysis of multiple areas (e.g., use of diagnostics and antimicrobials) present an extensive insight into large patient populations. This also enables the development of comprehensive and multidisciplinary approaches of infection management, combining diagnostic and therapeutic perspectives [1,9,12]. Unfortunately, these kinds of analyses still require substantial statistical knowledge and software skills, and it is time consuming when performed.</p>
+<p>Technology, data science, and software app development can bring solutions to complex data handling problems such as those described above. Software app development for medical and epidemiological (research) questions has found many important answers during recent years. For example, software apps at hospital emergency departments (EDs) in the form of a dashboard have been shown to improve efficiency and quality of care for patients requiring emergency admission to hospital [13]. These software apps are used to communicate clearly defined clinical problems, such as mortality ratio, number of cardiac arrests, or readmission rate to the EDs. This has led to a decreased LOS and mortality at the EDs. Others used similar approaches to rapidly and interactively display geographical locations of tuberculosis cases without the need of technical expertise improving the understanding of transmission and detection [14]. Furthermore, data-driven fields such as genomics are front runners in developing new, innovative software apps to handle large datasets, in close collaboration with bioinformatics [15].</p>
+<p>It is important to note that all of these abovementioned software apps have been created in an open-source approach. This means that the underlying source code can be easily shared, easily modified, and freely distributed through open repositories, such as GitHub [16], taking open-source software license obligations into account. This facilitates collaboration, quality control through code review, and easy adaptation to many different settings and information technology systems, and this supports the use of advanced data visualisation for users with minimal experience in programming and little or no budget for professional database engineers [15].</p>
+<p>In the field of medical microbiology, different approaches have been described to interactively work with microbiological diagnostics data and EHRs: electronic antibiograms, centralised resistance analysis, EHR data mining, and clinical decision support systems for AMS are great examples for innovation in the field [17-19]. However, a full open-source approach for software apps working with combined antimicrobials use and diagnostic data of individual patients on the hospital level in the field of infection management is still lacking.</p>
+</div>
+<div id="objectives" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Objectives</h3>
+<p>We followed principles of open knowledge [20] to address the need for an interactive, easy-to-use software app that allows users to investigate antimicrobial use, microbiological diagnostic use, and patient outcomes at an institutional (hospital) level. We developed an open-source, web-based software app – Rapid analysis of diagnostic and antimicrobial patterns in R (RadaR) that can be used for AMS and infection management. This free software app can be run on regular computers or implemented on local or web-based servers to be accessed through standard web browsers. The focus user group of this software app is health care professionals involved in AMS (e.g., infectious disease specialists, clinical microbiologists, and pharmacists). Although some technical expertise (basic R knowledge) is needed for installation and implementation, the use of RadaR follows usual web browser user experiences. RadaR enables rapid and reproducible data analysis without extensive previous analysis expertise in a graphically appealing way while being adaptable to different settings. RadaR’s analyses are based on datasets of individual patients. Therefore, aggregated results can also be stripped down, and additional patient features can be investigated. With this software app, we aim at supporting data-driven hospital insights and decision making for actors in the field of AMS in a free, transparent, and reproducible way.</p>
+</div>
+</div>
+<div id="methods" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Methods</h2>
+<p>For the development of software in an open-source environment, we used the open-source programming language R in conjunction with RStudio version 1.1.463 (RStudio, Inc) [21], an open-source integrated desktop environment for R [22]. Both R and RStudio are free of charge, and they need to be installed for the development and implementation of RadaR. To build RadaR as a web-based software app, we used the Shiny package for R [23]. Shiny allows R users to build interactive web apps without extensive knowledge in web design and its programming languages. The web apps can be run and hosted on the web for free [24], as well as on local or cloud-based servers or on personal computers.</p>
+<p>The functionality of R can be easily extended by installing additional packages. All packages used for the development of RadaR are listed in Table 1. RadaR is developed in an open-source environment and licensed under GNU General Public License v2.0 [25], giving options to change, modify, and adapt RadaR to both personal and commercial users’ needs while requiring the need to document code changes [25].</p>
+<p>RadaR’s calculations and data aggregation are done reactively on the basis of the selection of the user. Single observations on the patient level build the basis for any calculation. RadaR uses common CSV files as input. A total of three different data sources are read in RadaR for admission, antimicrobial, and microbiological data, which are merged and transformed upon start. A patient number or study number is used as a unique identifier. All antimicrobial and microbiological data are checked to ascertain whether they fall in the interval of admission dates.</p>
+<p class="tbl-caption">
+Table 1. Required R packages for RadaR.
+</p>
+<p>The input data should be structured in a dataset format, where each variable is one column and each observation is one row. This follows the concept of “tidy data,” as defined by Hadley Wickham [26]. Table 2 displays the set of variables underlying RadaR’s functionality. In our setting for the development of RadaR, these variables originated from three different data sources: administrative data from the hospital data warehouse, microbiological data from the laboratory information system, and antimicrobial prescription data from the computerised prescriber order entry system. The data preparation and cleaning process are very specific for each data source, dependent on local data standards, and difficult to generalise. Therefore, Table 2 represents the final variables and formats for the analysis and use with RadaR, referring to the “tidy data” concept above and to the R package collection tidyverse for the preparation process [26,27]. Additional variables are calculated and transformed using the packages lubridate and zoo for time points and intervals, and AMR for antimicrobial (group) names, microbial isolate names, first isolate identification, and resistance analysis [28-30]. Microbiological resistance is calculated per antimicrobial substance or as co-resistance if more than one substance is selected.</p>
+<p class="tbl-caption">
+Table 2. Input variables for RadaR.
+</p>
+<p>The input data should be structured in a dataset format, where each variable is one column and each observation is one row. This follows the concept of “tidy data,” as defined by Hadley Wickham [26]. Table 2 displays the set of variables underlying RadaR’s functionality. In our setting for the development of RadaR, these variables originated from three different data sources: administrative data from the hospital data warehouse, microbiological data from the laboratory information system, and antimicrobial prescription data from the computerised prescriber order entry system. The data preparation and cleaning process are very specific for each data source, dependent on local data standards, and difficult to generalise. Therefore, Table 2 represents the final variables and formats for the analysis and use with RadaR, referring to the “tidy data” concept above and to the R package collection tidyverse for the preparation process [26,27]. Additional variables are calculated and transformed using the packages lubridate and zoo for time points and intervals, and AMR for antimicrobial (group) names, microbial isolate names, first isolate identification, and resistance analysis [28-30]. Microbiological resistance is calculated per antimicrobial substance or as co-resistance if more than one substance is selected.</p>
+<p>RadaR can be used for graphical exploratory data analysis. Differences in LOS are displayed by a Kaplan-Meier curve in conjunction with a log-rank test, using the survminer package [32]. Time trends for number of admissions, antimicrobial consumption, and resistance counts per year, quarter, or month, are visualised in run charts using the qicharts2 package [33]. Nonrandom variation in these run charts is tested using Anhøj’s rules [34].</p>
+<p>RadaR has been developed in macOS High Sierra (1.4 GHz, 4 GB RAM), and it was successfully tested in Windows 7 (3.2 GHz, 8 GB RAM) and Linux (Ubuntu 16.04.4 LTS, 3.4 GHz, 12 GB RAM). A running example version has been deployed to shinyapps.io, a publicly available web hosting service for R Shiny apps [35]. The entire source code of RadaR is freely accessible on GitHub [36]. We intend to integrate suggestions and feedback coming from its users and the R community. RadaR was developed using data of patients admitted to the University Medical Center Groningen, Groningen, the Netherlands. Data were collected retrospectively, and permission was granted by the ethical committee (METc 2014/530). RadaR can be used locally in protected environments or hosted on the web, provided appropriate measures have been taken to guarantee data protection, depending on national regulations.</p>
+</div>
+<div id="results" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Results</h2>
+<div id="overview" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Overview</h3>
+<p>We have developed RadaR, a web-based software app providing an intuitive platform for rapid analysis of large datasets containing information about patients’ admission, antimicrobial use, and results of microbiological diagnostic tests. This software app can help users (i.e., AMS team members) find answers to questions, such as “What are the most commonly used antimicrobials at an institution/specialty/department and have they changed over time?” “Were adequate microbiological diagnostics performed at the start of antimicrobial treatments?” “What are the most frequent microorganisms found and their resistance patterns in different departments?” and “Can we identify priority areas within a hospital where antimicrobial or microbiological diagnostic use has the largest room for improvement?”</p>
+</div>
+<div id="application-design" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Application Design</h3>
+<p>RadaR is designed in the form of a web browser–based dashboard that most users are familiar with from typical websites and web-based tools (see Figure 1). The basis of RadaR’s functionality is filtering datasets and producing analytical graphs according to selection criteria defined by the user. Any calculations and data aggregation are based on single observations of individual patients. To identify and analyse groups of patients, 17 different selection criteria can be found in the sidebar (Table 3). The output of RadaR is grouped into four panels (patient, antimicrobials, diagnostics, and outcome) that each comprise three to four output boxes displaying the results.</p>
+<p class="tbl-caption">
+Table 3. Selection criteria in sidebar.
+</p>
+<p>All output is based on the selection criteria defined by the user in the sidebar. Each new selection and any change need to be confirmed by clicking the confirm selection button (see Figure 1). Users can navigate among the different analysis panels by clicking the respective button.</p>
+<p>Results are shown in bar charts, density plots, run charts, a bubble plot, and a Kaplan-Meier curve for LOS in hospital. Each panel further displays a table summarizing the respective data analyses. All output boxes and their content are described in Table 4. Most output boxes include modification options that can be identified by small gear icons (see Figure 1). These clickable icons allow for further specification of the generated plots and tables. Users can compare different groups (e.g., antimicrobial use by antimicrobial agent, resistance patterns per isolate, or LOS by specialty) or modify the plots (e.g., switch from count to proportion, change the chart type, or show or hide the legend). Plots and tables can be downloaded through download buttons as PNG files for plots and CSV, Excel, or PDF files for tables.</p>
+<p class="tbl-caption">
+Table 4. Output boxes for analysis results.
+</p>
+<p>Finally, two datasets (antimicrobial/admission data and microbiological data) of the user-defined selection can be downloaded from the sidebar menu in a CSV-file format for further analysis (e.g., retrieving a list of patient numbers of the selected patient group).</p>
+</div>
+<div id="development-process" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Development Process</h3>
+<p>RadaR has been developed in close contact with the AMS team and senior consulting specialists at the University Medical Center Groningen, Groningen, the Netherlands, to meet the needs and requirements of this user group. Subsequently, all members of the European Society of Clinical Microbiology and Infectious Diseases Study Group for Antimicrobial Stewardship (ESGAP) were asked to evaluate and test the software app through a running web-based example of RadaR and by filling out a web-based survey. The ESGAP comprises around 200 members from more than 30 countries worldwide. A total of 12 members from 9 different countries took part in the evaluation. This yielded important information on user experiences with the software app, which in turn led to further improvements that are reflected in the version we presented in this report. In a next phase, RadaR will be tested in different settings of ESGAP members and other interested partners using locally available data (e.g., an 837-bed tertiary care hospital in the Netherlands and a 750-bed tertiary care hospital in Greece).</p>
+</div>
+<div id="workflow" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Workflow</h3>
+<p>RadaR was developed and tested with a dataset of all patients admitted to our institution, a 1339-bed academic tertiary referral hospital, within the years of 2009 to 2016, comprising over 180,000 admissions. For simulation purposes and web-based user testing, we have created a test dataset of 60,000 simulated patients. This sample dataset allows testing of RadaR’s functionality, but it does not produce meaningful results.</p>
+<p>A typical example workflow with RadaR comprises 6 steps (with examples from the test dataset). They are listed below:</p>
+<ol style="list-style-type: decimal">
+<li>Define the selection: For example, patients receiving intravenous second- or third-generation cephalosporins as first treatment for at least two days, starting within the first two days of hospital admission from any specialty in all years in the dataset.</li>
+<li>Patients’ panel: Identify the total number of patients and the subspecialties with the highest number of included patients (e.g., 537 patients selected in total, with 97 patients from internal medicine). Investigate patients’ gender and age distribution.</li>
+<li>Antimicrobials panel: Identify the total use of the initial cefuroxime treatment in DDD and DOT per 100 bed days (e.g., 4.51 and 1.5, respectively). Stratify the results by subspecialty and identify the highest number of DDD and DOT per 100 bed days (e.g., highest use by DDD and DOT in internal medicine).</li>
+<li>Diagnostics panel: Check if the selected microbiological diagnostic test (e.g., blood culture test) has been performed on the same day as the start of the treatment (defined in the sidebar). Investigate the proportion of tests performed over the years and investigate which subspecialty performs best compared with others (e.g., paediatrics). Check which microorganisms (as first isolates) were found in the selected diagnostic specimens (the most common isolate: Escherichia coli). Investigate the proportion of isolates resistant to cefuroxime (8.9%) and analyse the trend over time.</li>
+<li>Outcome panel: Check for patterns of differences in LOS in the defined patient group by subspecialties or performed diagnostics (e.g., highest mean LOS of 7.8 days in Surgery).</li>
+<li>Refine the selection: Investigate a subgroup of the original selection. For example, select only the top three subspecialties by number of patients and repeat step 2 to 5.</li>
+</ol>
+</div>
+<div id="customisation" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Customisation</h3>
+<p>For setting up RadaR in a new environment after data preparation, users only need to perform the following four steps:</p>
+<ol style="list-style-type: decimal">
+<li>Downloading R and RStudio [21,22], which are free to use and open-source software</li>
+<li>Download or copy and paste RadaR’s source code [36] into three files in RStudio – global.R, server.R, and ui.R</li>
+<li>In global.R, manually edit the paths for the prepared datasets to be imported into RadaR</li>
+<li>Run the app in RStudio with the calling the function runApp() in the console or by clicking the green run app button. This will download and install the required R packages needed for the app if they have not been installed previously, and this will create the final dataset for analysis. The RadaR interface will open in the RStudio viewer pane or in a new window of the standard browser of the user’s operating system.</li>
+</ol>
+<p>RadaR’s appearance has been customised using a cascading style sheets (CSS) script [37] that is loaded into the app upon its start. This script needs to be saved into a subdirectory of the directory of the three main files (global.R, server.R, and ui.R) called www. We recommend RStudio’s project function to create a single project for RadaR and to store all information in this project directory. Users with experience in using CSS can fully alter RadaR’s design by changing the underlying CSS script.</p>
+</div>
+</div>
+<div id="discussion-1" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Discussion</h2>
+<div id="principal-findings" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Principal Findings</h3>
+<p>We have developed a web-based software app for rapid analysis of diagnostic and antimicrobial patterns that can support AMS teams to tailor their interventions. It has been designed to enhance communication of relevant findings while being easy to use. This also applies to users without extensive prior software skills, as it follows usual web browser user experiences. Moreover, it has been developed using open-source software. It is therefore free to use and accessible for download. In our experience, this system can be adapted to new settings within one day, when the required data (Table 2) are available.</p>
+<p>Commercial software for infection management is available (e.g., Epic Antimicrobial Stewardship Module, TREAT Steward). These offer extensive options for filtering, analysing, and visualizing EHRs with real-time connections to hospital data infrastructures and have been shown to be useful in clinical practice [38]. However, it is difficult to compare functionalities of these tools because of their non–open-source nature. This fact, along with the required budget to purchase the software, drastically limits their use. We are convinced that transparent software development can support the adoption of data-driven developments while enhancing optimal quality of care and patient safety, which is crucial in the light of new data-driven developments of using EHRs [39,40].</p>
+<p>The global nature of infections further calls to develop software tools applicable in resource-limited settings [41]. Open-source approaches for data analysis, such as RadaR, have advantages over traditional methods, such as Excel or SPSS. Hughes et al described those in their report of a software app for RNA-sequencing data analysis [15]. They highlight aspects that were also fundamental for the development of RadaR. First, R allows transparent, reproducible, and sustainable data analysis through scripts that can easily be shared and changed. This can build the basis for collaboration, and this enforces the spirit of open science (also through the strong collaborative R community on the web). Second, R is open source and free to use; therefore, it also enables use in resource-limited settings. Finally, Shiny empowers users to interact with the data, making even very large datasets quickly interpretable.</p>
+<p>Innovative approaches used in supporting infection management by leveraging EHRs are being investigated [17-19]. Reporting on AMR, antimicrobial use, and hospital infections (e.g., for quality assurance) is well established, but it is important to integrate these data sources in an approach that allows detailed filtering options on all input. Merely looking at antimicrobial use alone or comparing aggregated results (e.g., total amount of a specific antimicrobial substance per hospital correlated with the total count of a resistant isolate) will result in loss of information or even misleading interpretation. Detailed data and calculations on the basis of each individual patient are crucial to draw informed conclusions. Unfortunately, the abovementioned infection management approaches [17-19] either depend on additional commercial software for data visualisation or the source code is not openly available. We want to encourage others to turn toward available open-source software solutions, such as R, for an increased potential of collaboration and transparency. However, their strength is the connection to real-time data flows. This enables the prospective use and increases their usability for daily clinical practice. RadaR is currently still limited to retrospective data analysis because of a changing hospital data infrastructure in our setting. Technically, it is feasible to connect R-based software apps such as RadaR to real-time hospital data infrastructures running with clinical data standards [42]. For a start, access to static data extraction is often easier and faster to achieve. RadaR can be used to advocate the use of data visualisation tools and improved accessibility of hospital data sources. Until connection to real-time hospital data is established, RadaR can support users as a stand-alone option for retrospective data analysis in infection management. Next steps will involve testing in multiple settings and forming a user and research group to continue and expand the use of open-source technology and open science principles in infection management.</p>
+</div>
+<div id="conclusions" class="section level3" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Conclusions</h3>
+<p>RadaR demonstrates the feasibility of developing software tools for infection management and AMS teams in an open-source approach, making it free to use, share, or modify according to various needs in different settings. RadaR has the potential to be a highly useful tool for infection management and AMS in daily practice.</p>
+</div>
+</div>
+<div id="acknowledgements-1" class="section level2 unnumbered">
+<h2>Acknowledgements</h2>
+<p>The authors would like to thank the ESGAP executive committee for supporting the evaluation of RadaR in the ESGAP study group and all its members for their valuable input, suggestions, and comments. Furthermore, the authors wish to thank Igor van der Weide, Jan Arends, and Prashant Nannan Panday for their great support in obtaining required data at our institution that built the basis for the development of RadaR. The authors also thank the online R community as well as the valuable comments, suggestions, and input from reviewers that they have received to improve RadaR.</p>
+<p>RadaR was developed as part of a project funded by the European Commission Horizon 2020 Framework Marie Skłodowska-Curie Actions (grant agreement number: 713660-PRONKJEWAIL-H2020-MSCA-COFUND-2015).</p>
+</div>
+<div id="conflicts-of-interests" class="section level2 unnumbered">
+<h2>Conflicts of interests</h2>
+<p>None declared.</p>
+</div>
+<div id="references-4" class="section level2 unnumbered">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li>Dyar OJ, Huttner B, Schouten J, Pulcini C, ESGAP (ESCMID Study Group for Antimicrobial stewardshiP). What is antimicrobial stewardship? Clin Microbiol Infect 2017 Nov;23(11):793–798. <a href="PMID:28882725" class="uri">PMID:28882725</a></li>
+<li>Barlam TF, Cosgrove SE, Abbo LM, MacDougall C, Schuetz AN, Septimus EJ, Srinivasan A, Dellit TH, Falck-Ytter YT, Fishman NO, Hamilton CW, Jenkins TC, Lipsett PA, Malani PN, May LS, Moran GJ, Neuhauser MM, Newland JG, Ohl CA, Samore MH, Seo SK, Trivedi KK. Implementing an antibiotic stewardship program: Guidelines by the Infectious Diseases Society of America and the Society for Healthcare Epidemiology of America. Clin Infect Dis 2016 May 15;62(10):e51–77. <a href="PMID:27080992" class="uri">PMID:27080992</a></li>
+<li>Davey P, Marwick CA, Scott CL, Charani E, McNeil K, Brown E, Gould IM, Ramsay CR, Michie S. Interventions to improve antibiotic prescribing practices for hospital inpatients. Cochrane Database Syst Rev 2017 Feb 9;2:CD003543. <a href="PMID:28178770" class="uri">PMID:28178770</a></li>
+<li>National Institute for Health and Care Excellence. Antimicrobial stewardship: systems and processes for effective antimicrobial medicine use. <a href="https://www.nice.org.uk/Guidance/NG15" class="uri">https://www.nice.org.uk/Guidance/NG15</a>. Archived at: <a href="http://www.webcitation.org/73ybLqgCI" class="uri">http://www.webcitation.org/73ybLqgCI</a></li>
+<li>Schuts EC, Hulscher MEJL, Mouton JW, Verduin CM, Stuart JWTC, Overdiek HWPM, van der Linden PD, Natsch S, Hertogh CMPM, Wolfs TFW, Schouten JA, Kullberg BJ, Prins JM. Current evidence on hospital antimicrobial stewardship objectives: a systematic review and meta-analysis. Lancet Infect Dis 2016 Jul;16(7):847–856. <a href="PMID:26947617" class="uri">PMID:26947617</a></li>
+<li>Stichting Werkgroep AntibioticaBeleid. SWAB Guidelines for Antimicrobial Stewardship 2016. <a href="http://www.swab.nl/swab/cms3.nsf/uploads/FAF701FBF4FCBDD6C12580EC0037D292/$FILE/20161228%20SWAB%20Guidelines%20for%20Antimicrobial%20Stewardship%20-definitief.pdf" class="uri">http://www.swab.nl/swab/cms3.nsf/uploads/FAF701FBF4FCBDD6C12580EC0037D292/$FILE/20161228%20SWAB%20Guidelines%20for%20Antimicrobial%20Stewardship%20-definitief.pdf</a> . Archived at: <a href="http://www.webcitation.org/73ycxKUfO" class="uri">http://www.webcitation.org/73ycxKUfO</a></li>
+<li>Pulcini C, Binda F, Lamkang AS, Trett A, Charani E, Goff DA, Harbarth S, Hinrichsen SL, Levy-Hara G, Mendelson M, Nathwani D, Gunturu R, Singh S, Srinivasan A, Thamlikitkul V, Thursky K, Vlieghe E, Wertheim H, Zeng M, Gandra S, Laxminarayan R. Developing core elements and checklist items for global hospital antimicrobial stewardship programmes: a consensus approach. Clin Microbiol Infect. <a href="PMID:29625170" class="uri">PMID:29625170</a></li>
+<li>Sarkies MN, Bowles K-A, Skinner EH, Mitchell D, Haas R, Ho M, Salter K, May K, Markham D, O’Brien L, Plumb S, Haines TP. Data collection methods in health services research: hospital length of stay and discharge destination. Appl Clin Inform 2015 Feb 18;6(1):96–109. <a href="PMID:25848416" class="uri">PMID:25848416</a></li>
+<li>British Society for Antimicrobial Chemotherapy. Antimicrobial stewardship: From Principal to Practice. Birmingham, United Kingdom: British Society for Antimicrobial Chemotherapy; 2018. <a href="http://bsac.org.uk/antimicrobial-stewardship-from-principles-to-practice-e-book/" class="uri">http://bsac.org.uk/antimicrobial-stewardship-from-principles-to-practice-e-book/</a>. Archived at: <a href="http://www.webcitation.org/73ydEbLNu" class="uri">http://www.webcitation.org/73ydEbLNu</a></li>
+<li>Pulcini C, Morel CM, Tacconelli E, Beovic B, de With K, Goossens H, Harbarth S, Holmes A, Howard P, Morris AM, Nathwani D, Sharland M, Schouten J, Thursky K, Laxminarayan R, Mendelson M. Human resources estimates and funding for antibiotic stewardship teams are urgently needed. Clin Microbiol Infect 2017 Nov;23(11):785–787. <a href="PMID:28778544" class="uri">PMID:28778544</a></li>
+<li>Howard P, Pulcini C, Levy Hara G, West RM, Gould IM, Harbarth S, Nathwani D, ESCMID Study Group for Antimicrobial Policies (ESGAP), ISC Group on Antimicrobial Stewardship. An international cross-sectional survey of antimicrobial stewardship programmes in hospitals. J Antimicrob Chemother 2015 Apr;70(4):1245–1255. <a href="PMID:25527272" class="uri">PMID:25527272</a></li>
+<li>Dik J-WH, Poelman R, Friedrich AW, Panday PN, Lo-Ten-Foe JR, van Assen S, van Gemert-Pijnen JEWC, Niesters HGM, Hendrix R, Sinha B. An integrated stewardship model: antimicrobial, infection prevention and diagnostic (AID). Future Microbiol 2016;11(1):93–102. <a href="PMID:26323589" class="uri">PMID:26323589</a></li>
+<li>Staib A, Sullivan C, Jones M, Griffin B, Bell A, Scott I. The ED-inpatient dashboard: Uniting emergency and inpatient clinicians to improve the efficiency and quality of care for patients requiring emergency admission to hospital. Emerg Med Australas 2017 Jun;29(3):363–366. <a href="PMID:27592365" class="uri">PMID:27592365</a></li>
+<li>Smith CM, Hayward AC. DotMapper: an open source tool for creating interactive disease point maps. BMC Infect Dis 2016 Apr 12;16:145. <a href="PMID:27066780" class="uri">PMID:27066780</a></li>
+<li>Hughes LD, Lewis SA, Hughes ME. ExpressionDB: An open source platform for distributing genome-scale datasets. PLoS One 2017 Nov 2;12(11):e0187457. <a href="PMID:29095940" class="uri">PMID:29095940</a></li>
+<li>GitHub. <a href="https://github.com" class="uri">https://github.com</a> . Archived at: <a href="http://www.webcitation.org/73yb4rqQT" class="uri">http://www.webcitation.org/73yb4rqQT</a></li>
+<li>Simpao AF, Ahumada LM, Larru Martinez B, Cardenas AM, Metjian TA, Sullivan KV, Gálvez JA, Desai BR, Rehman MA, Gerber JS. Design and Implementation of a Visual Analytics Electronic Antibiogram within an Electronic Health Record System at a Tertiary Pediatric Hospital. Appl Clin Inform 2018 Jan;9(1):37–45. <a href="PMID:29342478" class="uri">PMID:29342478</a></li>
+<li>Lesho EP, Waterman PE, Chukwuma U, McAuliffe K, Neumann C, Julius MD, Crouch H, Chandrasekera R, English JF, Clifford RJ, Kester KE. The antimicrobial resistance monitoring and research (ARMoR) program: the US Department of Defense response to escalating antimicrobial resistance. Clin Infect Dis 2014 Aug 1;59(3):390–397. <a href="PMID:24795331" class="uri">PMID:24795331</a></li>
+<li>Simões AS, Maia MR, Gregório J, Couto I, Asfeldt AM, Simonsen GS, Póvoa P, Viveiros M, Lapão LV. Participatory-Implementation of an antibiotic stewardship programme supported by an innovative surveillance and clinical decision-support system. J Hosp Infect 2018 Jul 30; <a href="PMID:30071264" class="uri">PMID:30071264</a></li>
+<li>Molloy JC. The open knowledge foundation: open data means better science. PLoS Biol 2011 Dec;9(12):e1001195. <a href="PMID:22162946" class="uri">PMID:22162946</a></li>
+<li>RStudio. <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a> . Archived at: <a href="http://www.webcitation.org/73ybbedpd" class="uri">http://www.webcitation.org/73ybbedpd</a></li>
+<li>R Core Team. R: A Language and Environment for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>. Archived at: <a href="http://www.webcitation.org/73ydeuUVX" class="uri">http://www.webcitation.org/73ydeuUVX</a></li>
+<li>Chang W, Cheng J, Allaire JJ, Xie Y, McPherson J. shiny: web Application Framework for R. <a href="https://CRAN.R-project.org/package=shiny" class="uri">https://CRAN.R-project.org/package=shiny</a>. Archived at: <a href="http://www.webcitation.org/" class="uri">http://www.webcitation.org/</a> 73ydh83pW</li>
+<li>shinyapps.io. <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>. Archived at: <a href="http://www.webcitation.org/" class="uri">http://www.webcitation.org/</a> 73ybe2prd</li>
+<li>Stallman R. GNU General Public License, version 2. 1991. <a href="https://www.gnu.org/licenses/gpl-2.0.html" class="uri">https://www.gnu.org/licenses/gpl-2.0.html</a>. Archived at: <a href="http://www.webcitation.org/73ydum67R" class="uri">http://www.webcitation.org/73ydum67R</a></li>
+<li>Wickham H. Tidy Data. Journal of Statistical Software. Foundation for Open Access Statistics; 2014;59(10):1–23. [doi: 10.18637/jss.v059.i10]</li>
+<li>Tidyverse. <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>. Archived at: <a href="http://www.webcitation.org/" class="uri">http://www.webcitation.org/</a> 76WntlTmp</li>
+<li>Grolemund G, Wickham H. Dates and Times Made Easy with lubridate. Journal of Statistical Software 2011;40(3):1–25. [doi: 10.18637/jss.v040.i03]</li>
+<li>Zeileis A, Grothendieck G. zoo: S3 Infrastructure for Regular and Irregular Time Series. Journal of Statistical Software. 2005. p. 1–27. [doi: 10.18637/jss.v014.i06]</li>
+<li>Berends MS, Luz CF. AMR: An R package to simplify the analysis and prediction of Antimicrobial Resistance (AMR) and work with antibiotic properties by using evidence-based methods. [doi: 10.5281/zenodo.1749847]</li>
+<li>WHO Collaborating Centre for Drug Statistics Methodology. Guidelines for ATC classification and DDD assignment. Oslo, Norway; 2018. <a href="https://www.whocc.no/filearchive/publications/" class="uri">https://www.whocc.no/filearchive/publications/</a> guidelines.pdf. Archived at: <a href="http://www.webcitation.org/73yeFdXyM" class="uri">http://www.webcitation.org/73yeFdXyM</a></li>
+<li>Kassambara A, Kosinski M. survminer: Drawing Survival Curves using “ggplot2.” <a href="https://CRAN.R-project.org/package=survminer" class="uri">https://CRAN.R-project.org/package=survminer</a>. Archived at: <a href="http://www.webcitation.org/" class="uri">http://www.webcitation.org/</a> 73yeLlWLx</li>
+<li>Anhoej J. qicharts2: Quality Improvement Charts. <a href="https://CRAN.R-project.org/" class="uri">https://CRAN.R-project.org/</a> package=qicharts2 . Archived at: <a href="http://www.webcitation.org/76nVgPWG5" class="uri">http://www.webcitation.org/76nVgPWG5</a></li>
+<li>Anhøj J. Diagnostic value of run chart analysis: using likelihood ratios to compare run chart rules on simulated data series. PLoS One 2015 Mar 23;10(3):e0121349. <a href="PMID:25799549" class="uri">PMID:25799549</a></li>
+<li>RadaR shinyapps.io. <a href="https://ceefluz.shinyapps.io/radar/" class="uri">https://ceefluz.shinyapps.io/radar/</a>. Archived at: <a href="http://www" class="uri">http://www</a>. webcitation.org/73ybyEBHu</li>
+<li>RadaR GitHub. <a href="https://github.com/ceefluz/radar" class="uri">https://github.com/ceefluz/radar</a>. Archived at: <a href="http://www.webcitation.org/" class="uri">http://www.webcitation.org/</a> 73yc2PgeW</li>
+<li>RadaR CSS. <a href="https://github.com/ceefluz/radar/blob/master/www/radar_style.css" class="uri">https://github.com/ceefluz/radar/blob/master/www/radar_style.css</a>. Archived at: <a href="http://www.webcitation.org/73ycOiZA5" class="uri">http://www.webcitation.org/73ycOiZA5</a></li>
+<li>Pettit NN, Han Z, Choksi A, Bhagat PH, Pisano J. Using the Epic® Antimicrobial Stewardship (ASP) Module to Optimize Antimicrobial Stewardship Interventions. Open Forum Infectious Diseases 2017 Oct 1;4(suppl_1):S263–S264. [doi: 10.1093/ofid/ofx163.580]</li>
+<li>Xiao C, Choi E, Sun J. Opportunities and challenges in developing deep learning models using electronic health records data: a systematic review. J Am Med Inform Assoc 2018 Jun 8; <a href="PMID:29893864" class="uri">PMID:29893864</a></li>
+<li>Pirracchio R, Cohen MJ, Malenica I, Cohen J, Chambaz A, Cannesson M, Lee C, Resche-Rigon M, Hubbard A, ACTERREA Research Group. Big data and targeted machine learning in action to assist medical decision in the ICU. Anaesth Crit Care Pain Med 2018 Oct 16; <a href="PMID:30339893" class="uri">PMID:30339893</a></li>
+<li>Hahn E, Blazes D, Lewis S. Understanding How the “Open” of Open Source Software (OSS) Will Improve Global Health Security. Health Secur 016 Jan;14(1):13–18. <a href="PMID:26889576" class="uri">PMID:26889576</a></li>
+<li>Hong N, Prodduturi N, Wang C, Jiang G. Shiny FHIR: An Integrated Framework Leveraging Shiny R and HL7 FHIR to Empower Standards-Based Clinical Data Applications. Stud Health Technol Inform 2017;245:868–872. <a href="PMID:29295223" class="uri">PMID:29295223</a></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch04-amr-r-package.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["a_new_instrument_for_microbial_epidemiology.pdf", "a_new_instrument_for_microbial_epidemiology.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
