@@ -2132,6 +2132,377 @@ None declared.
   Hong N, Prodduturi N, Wang C, Jiang G. Shiny FHIR: An Integrated Framework Leveraging Shiny R and HL7 FHIR to Empower Standards-Based Clinical Data Applications. Stud Health Technol Inform 2017;245:868--872. \url{PMID:29295223}
 \end{enumerate}
 
+\hypertarget{ch06-radar2}{%
+\chapter{Better Antimicrobial Resistance Data Analysis and Reporting in Less Time}\label{ch06-radar2}}
+
+medRxiv {[}preprint{]} (2021), 21257599
+
+(as of date of PhD defence: 25 August 2021)
+
+Berends MS \textsuperscript{1,2}*, Luz CF \textsuperscript{2}*, Zhou XW \textsuperscript{2}, Lokate ML \textsuperscript{2}, Friedrich AW \textsuperscript{2}, Sinha BNM \textsuperscript{2‡}, Glasner C \textsuperscript{2‡}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Certe Medical Diagnostics and Advice Foundation, Groningen, The Netherlands
+\item
+  University of Groningen, University Medical Center Groningen, Department of Medical Microbiology and Infection Prevention, Groningen, Netherlands
+\end{enumerate}
+
+* These authors contributed equally\\
+\textsuperscript{‡} These authors contributed equally
+
+\hypertarget{abstract-4}{%
+\section*{Abstract}\label{abstract-4}}
+\addcontentsline{toc}{section}{Abstract}
+
+Insights and knowledge about local antimicrobial resistance (AMR) levels and epidemiology are essential to guide optimal decision-making processes in antimicrobial use. However, dedicated tools for reliable and reproducible AMR data analysis and reporting are often lacking. In this study, we aimed at comparing the effectiveness and efficiency of traditional analysis and reporting versus a new approach for reliable and reproducible AMR data analysis in a clinical setting. Ten professionals that routinely work with AMR data were recruited and provided with one year's blood culture test results from a tertiary care hospital results including antimicrobial susceptibility test results. Participants were asked to perform a detailed AMR data analysis in a two-round process: first using their analysis software of choice and next using previously developed open-source software tools. Accuracy of the results and time spent were compared between both rounds. Finally, participants rated the usability of the tools using the systems usability scale (SUS). The mean time spent on creating a comprehensive AMR report reduced from 93.7 (SD ±21.6) minutes to 22.4 (SD ±13.7) minutes (\emph{p} \textless{} 0.001). Average task completion per round changed from 56\% (SD: ±23\%) to 96\% (SD: ±5.5\%) (\emph{p} \textless{} 0.05). The proportion of correct answers in the available results increased from 37.9\% in the first to 97.9\% in the second round (\emph{p} \textless{} 0.001). The usability of the new tools was rated with a median of 83.8 (out of 100) on the SUS. This study demonstrated the significant improvement in efficiency and accuracy in standard AMR data analysis and reporting workflows through open-source software tools in a clinical setting. Integrating these tools in clinical settings can democratise the access to fast and reliable insights about local microbial epidemiology and associated AMR levels. Thereby, our approach can support evidence-based decision-making processes in the use of antimicrobials.
+
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
+
+Antimicrobial resistance (AMR) is a global challenge in healthcare, livestock and agriculture, and the environment alike. The silent tsunami of AMR is already impacting our lives and the wave is constantly growing \textsuperscript{{[}1,2{]}}. One crucial action point in the fight against AMR is the appropriate use of antimicrobials. The choice and use of antimicrobials has to be integrated into a well-informed decision making process and supported by antimicrobial and diagnostic stewardship programmes \textsuperscript{{[}3,4{]}}. Next to essential local, national, and international guidelines on appropriate antimicrobial use, the information on AMR rates and antimicrobial use through reliable data analysis and reporting is vital. While data on national and international levels are typically easy to access through official reports, local data insights are often lacking, difficult to establish, and its generation requires highly trained professionals. Unfortunately, working with local AMR data is often furthermore complicated by very heterogeneous data structures and information systems within and between different settings \textsuperscript{{[}5,6{]}}. Yet, decision makers in the clinical context need to be able to access these important data in an easy and rapid manner. Without a dedicated team of epidemiologically trained professionals, providing these insights could be challenging and error-prone. Incorrect data or data analyses could even lead to biased/erroneous empirical antimicrobial treatment policies.
+
+To overcome these hurdles, we previously developed new approaches to AMR data analysis and reporting to empower any expert on any level working with or relying on AMR data \textsuperscript{{[}7,8{]}}. We aimed at reliable, reproducible, and transparent AMR data analysis. The underlying concepts are based on open-source software, making them free to use and adaptable to any setting-specific needs. To specify, we developed a software package for the statistical language R to simplify and standardise AMR data analysis based on international guidelines \textsuperscript{{[}7{]}}. In addition, we demonstrated the application of this software package to create interactive analysis tools for rapid and user-friendly AMR data analysis and reporting \textsuperscript{{[}8{]}}.
+
+However, while the use of our approach in research has been demonstrated \textsuperscript{{[}9--12{]}}, the impact on workflows for AMR data analysis and reporting in clinical settings is pending. AMR data analysis and reporting are typically performed at clinical microbiology departments in hospitals, in microbiological laboratories, or as part of multidisciplinary antimicrobial stewardship activities. AMR data analysis and reporting require highly skilled professionals. In addition, thorough and in-depth analyses can be time consuming and sufficient resources need to be allocated for consistent and repeated reporting. This is further complicated by the lack of available software tools that fulfil all requirements such as incorporation of (inter-) national guidelines or reliable reference data.
+
+In this study, we aimed at demonstrating and studying the usability of our developed approach and its impact on clinicians' workflows in an institutional healthcare setting. The approach should enable better AMR data analysis and reporting in less time.
+
+\hypertarget{methods-1}{%
+\section{Methods}\label{methods-1}}
+
+The study was initiated at the University Medical Center Groningen (UMCG), a 1339-bed tertiary care hospital in the Northern Netherlands and performed across the UMCG and Certe (a regional laboratory) in the Northern Netherlands. It was designed as a comparison study to evaluate the efficiency, effectiveness, and usability of a new AMR data analysis and reporting approach \textsuperscript{{[}7,8{]}} against traditional reporting.
+
+\hypertarget{study-setup}{%
+\subsection{Study setup}\label{study-setup}}
+
+The setup of the study is visualised in Figure 1 and is explained in the following sections.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-01} 
+
+}
+
+\caption{Study setup; the same AMR data was used along all steps and rounds.}\label{fig:fig6-1}
+\end{figure}
+
+The study was based on a task document listing general AMR data analysis and reporting tasks (Table 1). This list served as the basis to compare effectiveness (solvability of each task for every user) and efficiency (time spent solving each task) of both approaches. Tasks were grouped into five related groups and analyses were performed per group (further referred to as five tasks). A maximum amount of time per task (group) was defined for each task. The list of tasks including correct results is available in Appendix A1.
+
+Table 1. AMR data analysis and reporting tasks.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-t01} 
+
+}
+
+\end{figure}
+
+\hypertarget{amr-data}{%
+\subsection{AMR data}\label{amr-data}}
+
+Anonymised microbiological data were obtained from the Department of Medical Microbiology and Infection Prevention at the UMCG. The data consisted of 23,416 records from 18,508 unique blood culture tests that were taken between January 1, 2019 and December 31, 2019 which were retrieved from the local laboratory information system (LIS). Available variables were: test date, sample identification number, sample specimen, anonymised patient identification number, microbial identification code (if culture positive), antimicrobial susceptibility test results (S, I, R - susceptible, susceptible at increased exposure, resistant) for 52 antimicrobials. The exemplified data structure is presented in Table 2.
+
+Table 2. Raw data example.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-t02} 
+
+}
+
+\end{figure}
+
+\hypertarget{amr-data-analysis-and-reporting}{%
+\subsection{AMR data analysis and reporting}\label{amr-data-analysis-and-reporting}}
+
+We used our previously developed approach \textsuperscript{{[}7,8{]}} to create a customised browser-based AMR data analysis and reporting application. This application was used in this study and applied to the AMR data analysis and reporting tasks listed in the task document (Table 1). The development of the application followed an agile approach using scrum methodologies \textsuperscript{{[}14{]}}. Agile development was used to effectively and iteratively work in a team of two developers, a clinical microbiologist, and an infection preventionist. The application was designed as an interactive web-browser based dashboard (Figure 2). The prepared dataset was already loaded into the system and interaction with the application was possible through any web-browser.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-02} 
+
+}
+
+\caption{Interactive dashboard for AMR data analysis used in this study.}\label{fig:fig6-2}
+\end{figure}
+
+\hypertarget{study-participants}{%
+\subsection{Study participants}\label{study-participants}}
+
+Participants in this study were recruited from the departments of Medical Microbiology, Critical Care Medicine, and Paediatrics, to reflect heterogeneous backgrounds of healthcare professionals working with AMR data. Members of the development team did not take part in the study.
+
+\hypertarget{study-execution-and-data}{%
+\subsection{Study execution and data}\label{study-execution-and-data}}
+
+First, study participants were asked to fill in an online questionnaire capturing their personal backgrounds, demographics, software experience, and experience in AMR data analysis and reporting. Next, participants were provided the task document together with the AMR data (csv- or xlsx-format). The participants were asked to perform a comprehensive AMR data report following the task document using their software of choice (round 1). Task results and information on time spent per task were self-monitored and returned by the participant using a structured report form. Lastly, participants repeated the AMR data analysis and reporting process with the same task document but using the new AMR data analysis and reporting application (round 2). Task results and information on time spent per task were again self-monitored and returned by the participant using the same structured report form as in the first round. This last step was evaluated using a second online questionnaire. The study execution process is illustrated in Figure 1.
+
+\hypertarget{evaluation-and-study-data-analysis}{%
+\subsection{Evaluation and study data analysis}\label{evaluation-and-study-data-analysis}}
+
+The utility of the new AMR data analysis and reporting application was evaluated according to ISO 9241-11:2018 \textsuperscript{{[}15{]}}. This international standard comprises several specific metrics to quantify the usability of a tool with regard to reaching its defined goals (Figure 3). In this study the goal was a comprehensive AMR data report and comprised several tasks as outlined in the task document. The equipment was the focus of this study (traditional AMR data analysis and reporting approach vs.~newly developed AMR data analysis and reporting approach).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/06-03} 
+
+}
+
+\caption{Usability framework based on ISO 9241-11.}\label{fig:fig6-3}
+\end{figure}
+
+The three ISO standard usability measures (in grey) were defined as follows in this study: Effectiveness was determined by degree of task completion coded using three categories: 1) completed; 2) not completed (task not possible to complete); 3) not completed (task completion would take too long, e.g., \textgreater{} 20 minutes). In addition, effectiveness was assessed by the variance in the task results stratified by study round. Deviation from the correct results was measured in absolute percent from the correct result. To account for potential differences in the results due to rounding, all numeric results were transformed to integers. Efficiency was determined by timing each individual task. Time on task started when the user started performing the task, all data was loaded, and the chosen analysis software was up and running. Time on task ended when the task reached one of the endpoints, as described above. In the analysis, the mean time for each task and the mean total time for the complete report across users was calculated. Statistically significant difference was tested using paired Student's t-test. All analyses were performed in R \textsuperscript{{[}16{]}}. Outcomes of tests were considered statistically significant for \emph{p} \textless{} 0.05. Accuracy of the reported results per task and round were studied by calculating the deviation of the reported result in absolute percent from the correct result. Satisfaction was measured using the System Usability Scale (SUS), a 10-item Likert scale with levels from 1 (strongly disagree) to 5 (strongly agree, see Appendix A3) \textsuperscript{{[}17{]}}. The SUS yields a single number from 0 to 100 representing a composite measure of the overall usability of the system being studied (SUS questions and score calculation in the Appendix A2).
+
+\hypertarget{results-1}{%
+\section{Results}\label{results-1}}
+
+\hypertarget{study-participants-1}{%
+\subsection{Study participants}\label{study-participants-1}}
+
+In total 10 participants were recruited for this study. Most participants were clinical microbiologists (in training) (70\%). The median age of the participant group was 40.5 years with a median working experience in the field of 8.0 years. The relevance of AMR data as part of the participants' job was rated very high (median of 5.0; scale 1-5). AMR data analysis was part of the participants' job for 60\% of all participants. Participants reported to be very experienced in interpreting AMR data structures (median 5.0, scale 1-5). Participants were less experienced in epidemiological data analysis (median 3.0, scale 1-5). All participant characteristics are summarised in Table 3.
+
+Table 3. Study participant characteristics.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-t03} 
+
+}
+
+\end{figure}
+
+The participants reported a diverse background in software experience for data analysis, with most experience reported for Microsoft Excel (Figure 4).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-04} 
+
+}
+
+\caption{Data analysis software experience reported by study participants.}\label{fig:fig6-4}
+\end{figure}
+
+\hypertarget{effectiveness-and-accuracy}{%
+\subsection{Effectiveness and accuracy}\label{effectiveness-and-accuracy}}
+
+Not all participants were able to complete the tasks within the given time frame. Average task completion between the first round (traditional AMR data analysis and reporting) and the second round (new AMR data analysis and reporting) changed from 56\% (SD: 23\%) to 96\% (SD: 6\%) (\emph{p} \textless{} 0.05). Task completion per question and round is displayed in Figure 5. Variation in responses for each given task showed significant differences between the first and second round.
+
+Figure 6 shows the deviation in absolute percent from the correct results from the correct result per round and task. The proportion of correct answers in the available results increased from 38\% in the first round to 98\% in the second round (\emph{p} \textless{} 0.001). A sub-analysis of species-specific results for task 3 round 1 is available in the appendix (A3).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-05} 
+
+}
+
+\caption{Task completion in percent by task number and round.}\label{fig:fig6-5}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-06} 
+
+}
+
+\caption{Deviation from the correct result by task and round in absolute percent from correct result. Only completed tasks (n) are shown.}\label{fig:fig6-6}
+\end{figure}
+
+\hypertarget{efficiency}{%
+\subsection{Efficiency}\label{efficiency}}
+
+Overall, the mean time spent per round was significantly reduced from 93.7 (SD: 21.6) minutes to 22.4 (SD: 13.7) minutes (\emph{p} \textless{} 0.001). Significant time reduction could be observed for tasks 2-5 (Figure 7). Analyses were further stratified to compare efficiency between participants that reported AMR data analysis as part of their job versus not part of the job. No significant time difference for completing all tasks could be found between the groups. However, in both groups the overall time for all tasks significantly decreased between the first and second round: on average by 70.7 minutes (\emph{p} \textless{} 0.001) in the group reporting AMR data analysis as part of their job and by 72.1 minutes (\emph{p} = 0.01) in the group not reporting AMR data analysis as part of their job.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-07} 
+
+}
+
+\caption{Mean time spent per task in minutes in each round (yellow = first round, red = second round). Statistical significance was tested using two-sided paired t-tests. All results were included irrespective of correctness of the results.}\label{fig:fig6-7}
+\end{figure}
+
+\hypertarget{satisfaction}{%
+\subsection{Satisfaction}\label{satisfaction}}
+
+Participants rated the usability of the new AMR reporting tool using the system usability scale (SUS) which takes values from 0 to 100 (Appendix A2). This resulted in a median of 83.8 on the SUS.
+
+\hypertarget{discussion-2}{%
+\section{Discussion}\label{discussion-2}}
+
+This study demonstrates the effectiveness, efficiency, and accuracy of using open-source software tools to improve AMR data analysis and reporting. We applied our previously developed approach to AMR data analysis and reporting \textsuperscript{{[}7,8{]}} in a clinical scenario and tested these tools with study participants (users) working in the field of AMR. Comparing traditional reporting tools with our newly developed reporting tools in a two-step process, we demonstrated the usability and validity of our approach. Based on a five item AMR data analysis and reporting task list and the provided AMR data, study participants reported significantly less time spent on creating an AMR data report (on average 93.7 minutes vs.~22.4 minutes; \emph{p} \textless{} 0.01). Task completion increased significantly from 56\% to 96\%, which indicates that with traditional reporting approaches common questions around AMR are hard to answer in a limited time. The accuracy of the results greatly improved using the new AMR reporting approach, implicating that erroneous answers are more common when users rely on general non-AMR-specific traditional software solutions. The usability of our AMR reporting approach was rated with a median of 83.8 on the SUS. The SUS is widely used in usability assessments of software solutions. A systematic analysis of more than 1000 reported SUS scores for web-based applications across different fields has found a mean SUS score of 68.1 \textsuperscript{{[}18{]}}. The results thus demonstrate a good usability of our approach.
+
+The task list used in this study reflects standard AMR reporting tasks. More sophisticated tasks, such as the detection of multi-drug resistance according to (inter-)national guidelines were not included. However, these analyses are vital in any setting but restrained since the required guidelines are not included in traditional reporting and analysis tools (e.g., Microsoft Excel, SPSS, etc.). Notably, the underlying software used in this study \textsuperscript{{[}7{]}} does provide methods to easily incorporate (inter)national guidelines such as the definitions for (multi-)drug resistance and country-specific (multi-)drug resistant organisms. The increase in task completion rate and accuracy of the results demonstrated that our tools empower specialists in the AMR field to generate reliable and valid AMR data reports. This is important as it enables detailed insights into the state of AMR on any level. These insights are often lacking. Our approach could fill this gap by democratising the ability for reliable and valid AMR data analysis and reporting.
+
+This need is exemplified in the worrisome heterogeneity of the reporting results using traditional AMR reporting tools in the first round. Only 37.9\% of the results in the first round were correct. Together with a task completion rate of 56\%, this demonstrates that traditional tools are not suitable for AMR reporting. The inability of working in reproducible and transparent workflows further aggravates reporting with these traditional tools. All participants in the study should be able to produce standard AMR reports and 90\% indicated that they worked with AMR data before. Sixty percent reported AMR data analysis to be part of their job, but no efficiency difference between groups were found. Our results show that AMR data analysis and reporting is challenging and can be highly error-prone. But an approach such as the one we developed can lead to correct results in a short time while being reproducible and transparent.
+
+We chose an agile workflow which enabled us to integrate clinical feedback throughout the development process in this study. We can highly recommend this efficient approach for projects that need to bridge clinical requirements, statistical approaches, and software development. Our approach was inspired by others not in the AMR field that describe the use of reproducible open-source workflows in ecology \textsuperscript{{[}19{]}}. We found that open-source software enables the transferability of methodological approaches across research fields. This transfer is a great example of the strength in the scientific community when working interdisciplinarily and sharing reliable and reproducible workflow.
+
+This study is subject to limitations. Only ten participants were recruited for this study. Although low participant numbers are frequently observed in usability studies and reports show that only five participants suffice to study the usability of a new system, a larger sample size would be desirable \textsuperscript{{[}20--24{]}}. In addition, other methods (e.g., `think aloud' method) beyond the single use of the SUS for the evaluation of our approach would further improve insights in the usability but were not possible in the study setting \textsuperscript{{[}25{]}}. Although the introduction of new AMR data and reporting tools made use of an already available approach, implementation still requires staff experienced in R. Reporting requirements also differ per setting and tailor-made solutions incorporating different requirements are needed.
+
+The present study shows that answering common AMR-related questions is tremendously burdened for professionals working with data. However, answers to such questions are the requirement to enable hospital-wide monitoring of AMR levels. The monitoring, be it on the institutional, regional, or (inter-) national level, can lead to alteration of treatment policies. It is thus of utmost importance that reliable results of AMR data analyses are ensured to avoid imprecise and erroneous results that could potentially be harmful to patients. We show that traditional reporting tools and applications that are not equipped for conducting microbiology epidemiological analyses seem unfit for this task - even for the most basic AMR data analyses. To fill this gap, we have developed new tools for AMR data analysis and reporting. In this study, we demonstrated that these tools can be used for better AMR data analysis and reporting in less time.
+
+\hypertarget{acknowledgements-2}{%
+\section*{Acknowledgements}\label{acknowledgements-2}}
+\addcontentsline{toc}{section}{Acknowledgements}
+
+We thank all study participants for their participation in this study and highly value their time spent on these tasks next to their clinical and other professional duties.
+
+\hypertarget{funding}{%
+\section*{Funding}\label{funding}}
+\addcontentsline{toc}{section}{Funding}
+
+This study was partly supported by the INTERREG V A (202085) funded project EurHealth-1Health (\url{http://www.eurhealth1health.eu}), part of a Dutch-German cross-border network supported by the European Commission, the Dutch Ministry of Health, Welfare and Sport, the Ministry of Economy, Innovation, Digitalisation and Energy of the German Federal State of North Rhine-Westphalia and the Ministry for National and European Affairs and Regional Development of Lower Saxony.
+
+In addition, this study was part of a project funded by the European Union's Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement 713660 (MSCA-COFUND-2015-DP ``Pronkjewail'').
+
+\hypertarget{conflict-of-interest}{%
+\section*{Conflict of interest}\label{conflict-of-interest}}
+\addcontentsline{toc}{section}{Conflict of interest}
+
+The authors report no conflict of interests.
+
+\hypertarget{references-5}{%
+\section*{References}\label{references-5}}
+\addcontentsline{toc}{section}{References}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  O'Neill J. Review on antimicrobial resistance: tackling a crisis for the health and wealth of nations. London: Wellcome Trust; 2014.
+\item
+  OECD. Stemming the Superbug Tide. OECD Health Policy Studies 2018:224. \url{https://doi.org/10.1787/9789264307599-en}.
+\item
+  Dyar OJ, Huttner B, Schouten J, Pulcini C, ESGAP (ESCMID Study Group for Antimicrobial stewardshiP). What is antimicrobial stewardship? Clin Microbiol Infect 2017;23:793--8. \url{https://doi.org/10.1016/j.cmi.2017.08.026}.
+\item
+  Morjaria S, Chapin KC. who to test, when, and for what: why diagnostic stewardship in infectious diseases matters. J Mol Diagn 2020;22:1109--13. \url{https://doi.org/10.1016/j.jmoldx.2020.06.012}.
+\item
+  Tacconelli E, Sifakis F, Harbarth S, Schrijver R, van Mourik M, Voss A, \emph{et al.} Surveillance for control of antimicrobial resistance. Lancet Infect Dis 2018;18:e99--106. \url{https://doi.org/10.1016/S1473-3099(17)30485-1}.
+\item
+  Limmathurotsakul D, Dunachie S, Fukuda K, Feasey NA, Okeke IN, Holmes AH, \emph{et al.} Improving the estimation of the global burden of antimicrobial resistant infections. Lancet Infect Dis 2019;19:e392--8. \url{https://doi.org/10.1016/S1473-3099(19)30276-2}.
+\item
+  Berends MS, Luz CF, Friedrich AW, Sinha BNM, Albers CJ, Glasner C. AMR - An R package for working with antimicrobial resistance data. Cold Spring Harbor Laboratory 2019:810622. \url{https://doi.org/10.1101/810622}.
+\item
+  Luz CF, Berends MS, Dik J-WH, Lokate M, Pulcini C, Glasner C, \emph{et al.} Rapid analysis of diagnostic and antimicrobial patterns in R (RadaR): interactive open-source software app for infection management and antimicrobial stewardship. J Med Internet Res 2019;21:e12843. \url{https://doi.org/10.2196/12843}.
+\item
+  Le Guern R, Titécat M, Loïez C, Duployez C, Wallet F, Dessein R. Comparison of time-to-positivity between two blood culture systems: a detailed analysis down to the genus-level. Eur J Clin Microbiol Infect Dis 2021. \url{https://doi.org/10.1007/s10096-021-04175-9}.
+\item
+  Kim S, Yoo SJ, Chang J. importance of susceptibility rate of ``the first'' isolate: evidence of real-world data. Medicina 2020;56. \url{https://doi.org/10.3390/medicina56100507}.
+\item
+  Tenea GN, Jarrin-V P, Yepez L. microbiota of wild fruits from the amazon region of ecuador: linking diversity and functional potential of lactic acid bacteria with their origin. In: Mikkola HJ, editor. Ecosystem and Biodiversity of Amazonia, Rijeka: IntechOpen; 2021. \url{https://doi.org/10.5772/intechopen.94179}.
+\item
+  Dutey-Magni PF, Gill MJ, McNulty D, Sohal G, Hayward A, Shallcross L, \emph{et al.} Feasibility study of hospital antimicrobial stewardship analytics using electronic health records. JAC Antimicrob Resist 2021;3. \url{https://doi.org/10.1093/jacamr/dlab018}.
+\item
+  Clinical and Laboratory Standards Institute. M39-A4, Analysis and Presentation of Cumulative Antimicrobial Susceptibility Test Data, 4th Edition. 4th ed.~Pittsburgh: Clinical and Laboratory Standards Institute; 2014.
+\item
+  Schwaber K, Beedle M. Agile software development with Scrum. London: Pearson; 2001.
+\item
+  International Organization for Standardization. Ergonomics of human-system interaction --- part 11: usability: definitions and concepts (ISO 9241-11:2018 ); Geneva: International Organization for Standardization; 2018.
+\item
+  R Core Team. R: A language and environment for statistical computing. Vienna: R Foundation for Statistical Computing; 2019.
+\item
+  Brooke J. SUS: A retrospective. Journal of Usability Studies 2013;8:29--40.
+\item
+  Bangor A, Kortum PT, Miller JT. An empirical evaluation of the system usability scale. International Journal of Human--Computer Interaction 2008;24:574--94. \url{https://doi.org/10.1080/10447310802205776}.
+\item
+  Lowndes JSS, Best BD, Scarborough C, Afflerbach JC, Frazier MR, O'Hara CC, \emph{et al.} Our path to better science in less time using open data science tools. Nat Ecol Evol 2017;1:160. \url{https://doi.org/10.1038/s41559-017-0160}.
+\item
+  Ledieu T, Bouzillé G, Thiessard F, Berquet K, Van Hille P, Renault E, \emph{et al.} Timeline representation of clinical data: usability and added value for pharmacovigilance. BMC Med Inform Decis Mak 2018;18:86. \url{https://doi.org/10.1186/s12911-018-0667-x}.
+\item
+  Rubin J, Chisnell D. Handbook of usability testing: how to plan, design, and conduct effective tests. Hoboken: Wiley; 2008.
+\item
+  Albert W, Tullis T. Measuring the user experience: collecting, analyzing, and presenting usability metrics. Burlington: Morgan Kaufmann; 2013.
+\item
+  Iordatii M, Venot A, Duclos C. Design and evaluation of a software for the objective and easy-to-read presentation of new drug properties to physicians. BMC Med Inform Decis Mak 2015;15:42. \url{https://doi.org/10.1186/s12911-015-0158-2}.
+\item
+  Bastien JMC. Usability testing: a review of some methodological and technical aspects of the method. Int J Med Inform 2010;79:e18--23. \url{https://doi.org/10.1016/j.ijmedinf.2008.12.004}.
+\item
+  Jaspers MWM. A comparison of usability methods for testing interactive health technologies: methodological aspects and empirical evidence. Int J Med Inform 2009;78:340--53. \url{https://doi.org/10.1016/j.ijmedinf.2008.10.002}.
+\end{enumerate}
+
+\hypertarget{appendix}{%
+\section*{Appendix}\label{appendix}}
+\addcontentsline{toc}{section}{Appendix}
+
+\hypertarget{appendix-a1-task-lists-including-correct-results}{%
+\subsection*{Appendix A1: Task lists including correct results}\label{appendix-a1-task-lists-including-correct-results}}
+\addcontentsline{toc}{subsection}{Appendix A1: Task lists including correct results}
+
+Table A1. AMR data analysis and reporting tasks with correct results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-ta01} 
+
+}
+
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-ta01b} 
+
+}
+
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-ta01c} 
+
+}
+
+\end{figure}
+
+\hypertarget{appendix-a2-system-usability-scale-sus}{%
+\subsection*{Appendix A2: System Usability Scale (SUS)}\label{appendix-a2-system-usability-scale-sus}}
+\addcontentsline{toc}{subsection}{Appendix A2: System Usability Scale (SUS)}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  I think that I would like to use this system frequently.
+\item
+  I found the system unnecessarily complex.
+\item
+  I thought the system was easy to use
+\item
+  I think that I would need the support of a technical person to be able to use this system.
+\item
+  I found the various functions in this system were well integrated.
+\item
+  I thought there was too much inconsistency in this system.
+\item
+  I would imagine that most people would learn to use this system very quickly.
+\item
+  I found the system very cumbersome to use.
+\item
+  I felt very confident using the system.
+\item
+  I needed to learn a lot of things before I could get going with this system.
+\end{enumerate}
+
+(Each item with levels: 1 = strongly disagrees to 5 = strongly agrees)
+
+Scores for individual items are not meaningful on their own. To calculate the SUS score, the score contributions from each item must be summed. Each item's score contribution ranges from 0 to 4. For items 1, 3, 5, 7, and 9 the score contribution is the scale position minus 1. For items 2, 4, 6, 8, and 10, the contribution is 5 minus the scale position. The sum of the scores is multiplied by 2.5 to obtain the SUS.
+
+\hypertarget{appendix-a3-task-3-sub-analysis}{%
+\subsection*{Appendix A3: Task 3 sub-analysis}\label{appendix-a3-task-3-sub-analysis}}
+\addcontentsline{toc}{subsection}{Appendix A3: Task 3 sub-analysis}
+
+Task 3 asked participants to identify the ten most frequent species in the provided data set, while correcting for multiple occurrences of a species within a patient. Figure A3 illustrates the deviation from the correct result in the first round (traditional AMR reporting) per species. For this analysis also incomplete results were included (i.e., task not completed but some results provided).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-a03} 
+
+}
+
+\caption{Results from task 3 in round 1. Deviation in absolute percent from the correct result per identified species. Also, incomplete data from participants was used in this analysis (i.e., task not completed but some results given). The correct number per species is given in addition to the number provided answers.}\label{fig:fig6-a1}
+\end{figure}
+
   \bibliography{packages.bib}
 
 \end{document}

@@ -42,7 +42,7 @@ insert_graphic <- function(path, ...) {
 insert_graphic("images/cover.jpg")
 
 # find 
-# \[([0-9,-–]+)\]
+# \[([0-9,–-]+)\]
 # replace with
 # ^[\1]^
 

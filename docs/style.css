@@ -69,10 +69,9 @@ li.chapter b:after{
 .book .book-body .section * {
   color: black;
 }
-.book-body p code {
+.book-body p code,
+.book-body li code{
   font-size: 1.3rem !important;
-  padding-left: 0.1em;
-  padding-right: 0.1em;
   white-space: unset;
 }
 .book-body p code:before,
@@ -85,24 +84,24 @@ li.chapter b:after{
 .book-body .caption,
 .book-body .tbl-caption {
   color: black;
-  font-size: 1.6rem !important;
+  font-size: 1.7rem !important;
   line-height: 1.2;
 }
 .book-body .caption {
   margin-top: 0px !important;
-  margin-bottom: 3em !important;
+  margin-bottom: 2.5em !important;
 }
 .book-body .tbl-caption {
-  margin-top: 3em !important;
+  margin-top: 2.5em !important;
   margin-bottom: 0px !important;
 }
 .book-body .figure {
   /* this will only be in fig:fig chunks, not in fig:tbl chunks */
-  margin-top: 3em !important;
+  margin-top: 2.5em !important;
 }
 img[src*=-t] {
   /* this will only be in fig:tbl chunks, not in fig:fig chunks */
-  margin-bottom: 3em !important;
+  margin-bottom: 2.5em !important;
 }
 
 .book-body li {

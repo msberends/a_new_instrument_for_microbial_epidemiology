@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Better Antimicrobial Resistance Data Analysis and Reporting in Less Time | A New Instrument for Microbial Epidemiology</title>
+  <meta name="description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Better Antimicrobial Resistance Data Analysis and Reporting in Less Time | A New Instrument for Microbial Epidemiology" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology" />
+  <meta property="og:image" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology/images/cover.jpg" />
+  <meta property="og:description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="github-repo" content="msberends/a_new_instrument_for_microbial_epidemiology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Better Antimicrobial Resistance Data Analysis and Reporting in Less Time | A New Instrument for Microbial Epidemiology" />
+  
+  <meta name="twitter:description" content="This is the integral PhD thesis ‘A New Instrument for Microbial Epidemiology’ (DOI 10.33612/diss.177417131) by Matthijs S. Berends, which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021." />
+  <meta name="twitter:image" content="https://msberends.github.io/a_new_instrument_for_microbial_epidemiology/images/cover.jpg" />
+
+<meta name="author" content="Matthijs S. Berends" />
+
+
+<meta name="date" content="2021-08-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch05-radar.html"/>
+
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://doi.org/10.33612/diss.177417131" target="blank"><img src="images/cover.jpg" style="width:90%; margin-left:5%;"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preamble</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#short-summary-250-words"><i class="fa fa-check"></i>Short summary (250 words)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
+<li class="chapter" data-level="" data-path="contents.html"><a href="contents.html"><i class="fa fa-check"></i>Contents</a></li>
+<li class="chapter" data-level="1" data-path="ch01-introduction.html"><a href="ch01-introduction.html"><i class="fa fa-check"></i><b>1</b> General Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch01-introduction.html"><a href="ch01-introduction.html#microbial-epidemiology"><i class="fa fa-check"></i><b>1.1</b> Microbial epidemiology</a></li>
+<li class="chapter" data-level="1.2" data-path="ch01-introduction.html"><a href="ch01-introduction.html#antimicrobial-resistance-in-microorganisms"><i class="fa fa-check"></i><b>1.2</b> Antimicrobial resistance in microorganisms</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="ch01-introduction.html"><a href="ch01-introduction.html#laboratory-diagnostics"><i class="fa fa-check"></i><b>1.2.1</b> Laboratory diagnostics</a></li>
+<li class="chapter" data-level="1.2.2" data-path="ch01-introduction.html"><a href="ch01-introduction.html#interpretation-of-raw-results"><i class="fa fa-check"></i><b>1.2.2</b> Interpretation of raw results</a></li>
+<li class="chapter" data-level="1.2.3" data-path="ch01-introduction.html"><a href="ch01-introduction.html#multi-drug-resistant-organisms"><i class="fa fa-check"></i><b>1.2.3</b> Multi-drug resistant organisms</a></li>
+<li class="chapter" data-level="1.2.4" data-path="ch01-introduction.html"><a href="ch01-introduction.html#surveillance-programs"><i class="fa fa-check"></i><b>1.2.4</b> Surveillance programs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="ch01-introduction.html"><a href="ch01-introduction.html#data-analysis-using-r"><i class="fa fa-check"></i><b>1.3</b> Data analysis using R</a></li>
+<li class="chapter" data-level="1.4" data-path="ch01-introduction.html"><a href="ch01-introduction.html#setting-for-this-thesis"><i class="fa fa-check"></i><b>1.4</b> Setting for this thesis</a></li>
+<li class="chapter" data-level="1.5" data-path="ch01-introduction.html"><a href="ch01-introduction.html#aim-of-this-thesis-and-introduction-to-its-chapters"><i class="fa fa-check"></i><b>1.5</b> Aim of this thesis and introduction to its chapters</a></li>
+<li class="chapter" data-level="" data-path="ch01-introduction.html"><a href="ch01-introduction.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html"><i class="fa fa-check"></i><b>2</b> Diagnostic Stewardship: Sense or Nonsense?!</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="2.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#case-1"><i class="fa fa-check"></i><b>2.1.1</b> Case 1</a></li>
+<li class="chapter" data-level="2.1.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#case-2"><i class="fa fa-check"></i><b>2.1.2</b> Case 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#the-general-concept"><i class="fa fa-check"></i><b>2.2</b> The general concept</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#diagnostics"><i class="fa fa-check"></i><b>2.2.1</b> ‘Diagnostics’</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#dsp-in-the-microbiological-laboratory"><i class="fa fa-check"></i><b>2.2.2</b> DSP in the microbiological laboratory</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#dsp-as-process-optimisation"><i class="fa fa-check"></i><b>2.2.3</b> DSP as process optimisation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#multidisciplinary-aspects-of-dsp-and-infection-management"><i class="fa fa-check"></i><b>2.2.4</b> Multidisciplinary aspects of DSP and infection management</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#conclusion"><i class="fa fa-check"></i><b>2.3</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#financing"><i class="fa fa-check"></i>Financing</a></li>
+<li class="chapter" data-level="" data-path="ch02-diagnostic-stewardship.html"><a href="ch02-diagnostic-stewardship.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html"><i class="fa fa-check"></i><b>3</b> Introducing a New, Free, and Independent Method for Standardised, Reproducible and Reliable Analyses of Antimicrobial Resistance Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="3.1" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#standardising-amr-data-analysis"><i class="fa fa-check"></i><b>3.2</b> Standardising AMR data analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#comparison-with-existing-software-methods"><i class="fa fa-check"></i><b>3.3</b> Comparison with existing software methods</a></li>
+<li class="chapter" data-level="3.4" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#user-feedback"><i class="fa fa-check"></i><b>3.4</b> User feedback</a></li>
+<li class="chapter" data-level="3.5" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#conclusion-1"><i class="fa fa-check"></i><b>3.5</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="ch03-introducing-new-method.html"><a href="ch03-introducing-new-method.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html"><i class="fa fa-check"></i><b>4</b> <code>AMR</code> - An <code>R</code> Package for Working with Antimicrobial Resistance Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="4.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.2</b> Antimicrobial resistance data</a></li>
+<li class="chapter" data-level="4.3" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#antimicrobial-resistance-data-transformation"><i class="fa fa-check"></i><b>4.3</b> Antimicrobial resistance data transformation</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-taxonomically-valid-microorganism-names"><i class="fa fa-check"></i><b>4.3.1</b> Working with taxonomically valid microorganism names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-antimicrobial-names-or-codes"><i class="fa fa-check"></i><b>4.3.2</b> Working with antimicrobial names or codes</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-antimicrobial-susceptibility-test-results"><i class="fa fa-check"></i><b>4.3.3</b> Working with antimicrobial susceptibility test results</a></li>
+<li class="chapter" data-level="4.3.4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#interpretative-rules-by-eucast"><i class="fa fa-check"></i><b>4.3.4</b> Interpretative rules by EUCAST</a></li>
+<li class="chapter" data-level="4.3.5" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#working-with-defined-daily-doses-ddd"><i class="fa fa-check"></i><b>4.3.5</b> Working with defined daily doses (DDD)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#enhancing-antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.4</b> Enhancing antimicrobial resistance data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#determining-first-isolates"><i class="fa fa-check"></i><b>4.4.1</b> Determining first isolates</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#determining-multi-drug-resistant-organisms-mdro"><i class="fa fa-check"></i><b>4.4.2</b> Determining multi-drug resistant organisms (MDRO)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#analysing-antimicrobial-resistance-data"><i class="fa fa-check"></i><b>4.5</b> Analysing antimicrobial resistance data</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#calculation-of-antimicrobial-resistance"><i class="fa fa-check"></i><b>4.5.1</b> Calculation of antimicrobial resistance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#design-decisions"><i class="fa fa-check"></i><b>4.6</b> Design decisions</a></li>
+<li class="chapter" data-level="4.7" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#reproducible-example"><i class="fa fa-check"></i><b>4.7</b> Reproducible example</a></li>
+<li class="chapter" data-level="4.8" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#discussion"><i class="fa fa-check"></i><b>4.8</b> Discussion</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#computational-details"><i class="fa fa-check"></i>Computational Details</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#references-3"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="ch04-amr-r-package.html"><a href="ch04-amr-r-package.html#appendix-a-included-data-sets"><i class="fa fa-check"></i>Appendix A: Included Data Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch05-radar.html"><a href="ch05-radar.html"><i class="fa fa-check"></i><b>5</b> Rapid Analysis of Diagnostic and Antimicrobial Patterns in R (RadaR): Interactive Open-Source Software App for Infection Management and Antimicrobial Stewardship</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#abstract-3"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="ch05-radar.html"><a href="ch05-radar.html#introduction-2"><i class="fa fa-check"></i><b>5.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ch05-radar.html"><a href="ch05-radar.html#background-1"><i class="fa fa-check"></i><b>5.1.1</b> Background</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ch05-radar.html"><a href="ch05-radar.html#objectives"><i class="fa fa-check"></i><b>5.1.2</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ch05-radar.html"><a href="ch05-radar.html#methods"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
+<li class="chapter" data-level="5.3" data-path="ch05-radar.html"><a href="ch05-radar.html#results"><i class="fa fa-check"></i><b>5.3</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ch05-radar.html"><a href="ch05-radar.html#overview"><i class="fa fa-check"></i><b>5.3.1</b> Overview</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ch05-radar.html"><a href="ch05-radar.html#application-design"><i class="fa fa-check"></i><b>5.3.2</b> Application Design</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ch05-radar.html"><a href="ch05-radar.html#development-process"><i class="fa fa-check"></i><b>5.3.3</b> Development Process</a></li>
+<li class="chapter" data-level="5.3.4" data-path="ch05-radar.html"><a href="ch05-radar.html#workflow"><i class="fa fa-check"></i><b>5.3.4</b> Workflow</a></li>
+<li class="chapter" data-level="5.3.5" data-path="ch05-radar.html"><a href="ch05-radar.html#customisation"><i class="fa fa-check"></i><b>5.3.5</b> Customisation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ch05-radar.html"><a href="ch05-radar.html#discussion-1"><i class="fa fa-check"></i><b>5.4</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="ch05-radar.html"><a href="ch05-radar.html#principal-findings"><i class="fa fa-check"></i><b>5.4.1</b> Principal Findings</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch05-radar.html"><a href="ch05-radar.html#conclusions"><i class="fa fa-check"></i><b>5.4.2</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#acknowledgements-1"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#conflicts-of-interests"><i class="fa fa-check"></i>Conflicts of interests</a></li>
+<li class="chapter" data-level="" data-path="ch05-radar.html"><a href="ch05-radar.html#references-4"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch06-radar2.html"><a href="ch06-radar2.html"><i class="fa fa-check"></i><b>6</b> Better Antimicrobial Resistance Data Analysis and Reporting in Less Time</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#abstract-4"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="6.1" data-path="ch06-radar2.html"><a href="ch06-radar2.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="ch06-radar2.html"><a href="ch06-radar2.html#methods-1"><i class="fa fa-check"></i><b>6.2</b> Methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ch06-radar2.html"><a href="ch06-radar2.html#study-setup"><i class="fa fa-check"></i><b>6.2.1</b> Study setup</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch06-radar2.html"><a href="ch06-radar2.html#amr-data"><i class="fa fa-check"></i><b>6.2.2</b> AMR data</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch06-radar2.html"><a href="ch06-radar2.html#amr-data-analysis-and-reporting"><i class="fa fa-check"></i><b>6.2.3</b> AMR data analysis and reporting</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch06-radar2.html"><a href="ch06-radar2.html#study-participants"><i class="fa fa-check"></i><b>6.2.4</b> Study participants</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ch06-radar2.html"><a href="ch06-radar2.html#study-execution-and-data"><i class="fa fa-check"></i><b>6.2.5</b> Study execution and data</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ch06-radar2.html"><a href="ch06-radar2.html#evaluation-and-study-data-analysis"><i class="fa fa-check"></i><b>6.2.6</b> Evaluation and study data analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch06-radar2.html"><a href="ch06-radar2.html#results-1"><i class="fa fa-check"></i><b>6.3</b> Results</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ch06-radar2.html"><a href="ch06-radar2.html#study-participants-1"><i class="fa fa-check"></i><b>6.3.1</b> Study participants</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch06-radar2.html"><a href="ch06-radar2.html#effectiveness-and-accuracy"><i class="fa fa-check"></i><b>6.3.2</b> Effectiveness and accuracy</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ch06-radar2.html"><a href="ch06-radar2.html#efficiency"><i class="fa fa-check"></i><b>6.3.3</b> Efficiency</a></li>
+<li class="chapter" data-level="6.3.4" data-path="ch06-radar2.html"><a href="ch06-radar2.html#satisfaction"><i class="fa fa-check"></i><b>6.3.4</b> Satisfaction</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch06-radar2.html"><a href="ch06-radar2.html#discussion-2"><i class="fa fa-check"></i><b>6.4</b> Discussion</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#acknowledgements-2"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#funding"><i class="fa fa-check"></i>Funding</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#conflict-of-interest"><i class="fa fa-check"></i>Conflict of interest</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#references-5"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#appendix"><i class="fa fa-check"></i>Appendix</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#appendix-a1-task-lists-including-correct-results"><i class="fa fa-check"></i>Appendix A1: Task lists including correct results</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#appendix-a2-system-usability-scale-sus"><i class="fa fa-check"></i>Appendix A2: System Usability Scale (SUS)</a></li>
+<li class="chapter" data-level="" data-path="ch06-radar2.html"><a href="ch06-radar2.html#appendix-a3-task-3-sub-analysis"><i class="fa fa-check"></i>Appendix A3: Task 3 sub-analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li class="copyright">© 2021 Matthijs Berends</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A New Instrument for Microbial Epidemiology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch06-radar2" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Better Antimicrobial Resistance Data Analysis and Reporting in Less Time</h1>
+<p>
+medRxiv [preprint] (2021), 21257599
+<note>
+(as of date of PhD defence: 25 August 2021)
+</note>
+</p>
+<p>Berends MS <sup>1,2</sup>*, Luz CF <sup>2</sup>*, Zhou XW <sup>2</sup>, Lokate ML <sup>2</sup>, Friedrich AW <sup>2</sup>, Sinha BNM <sup>2‡</sup>, Glasner C <sup>2‡</sup></p>
+<ol style="list-style-type: decimal">
+<li>Certe Medical Diagnostics and Advice Foundation, Groningen, The Netherlands</li>
+<li>University of Groningen, University Medical Center Groningen, Department of Medical Microbiology and Infection Prevention, Groningen, Netherlands</li>
+</ol>
+<p>* These authors contributed equally<br />
+<sup>‡</sup> These authors contributed equally</p>
+<div id="abstract-4" class="section level2 unnumbered">
+<h2>Abstract</h2>
+<p>Insights and knowledge about local antimicrobial resistance (AMR) levels and epidemiology are essential to guide optimal decision-making processes in antimicrobial use. However, dedicated tools for reliable and reproducible AMR data analysis and reporting are often lacking. In this study, we aimed at comparing the effectiveness and efficiency of traditional analysis and reporting versus a new approach for reliable and reproducible AMR data analysis in a clinical setting. Ten professionals that routinely work with AMR data were recruited and provided with one year’s blood culture test results from a tertiary care hospital results including antimicrobial susceptibility test results. Participants were asked to perform a detailed AMR data analysis in a two-round process: first using their analysis software of choice and next using previously developed open-source software tools. Accuracy of the results and time spent were compared between both rounds. Finally, participants rated the usability of the tools using the systems usability scale (SUS). The mean time spent on creating a comprehensive AMR report reduced from 93.7 (SD ±21.6) minutes to 22.4 (SD ±13.7) minutes (<em>p</em> &lt; 0.001). Average task completion per round changed from 56% (SD: ±23%) to 96% (SD: ±5.5%) (<em>p</em> &lt; 0.05). The proportion of correct answers in the available results increased from 37.9% in the first to 97.9% in the second round (<em>p</em> &lt; 0.001). The usability of the new tools was rated with a median of 83.8 (out of 100) on the SUS. This study demonstrated the significant improvement in efficiency and accuracy in standard AMR data analysis and reporting workflows through open-source software tools in a clinical setting. Integrating these tools in clinical settings can democratise the access to fast and reliable insights about local microbial epidemiology and associated AMR levels. Thereby, our approach can support evidence-based decision-making processes in the use of antimicrobials.</p>
+</div>
+<div id="introduction-3" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Antimicrobial resistance (AMR) is a global challenge in healthcare, livestock and agriculture, and the environment alike. The silent tsunami of AMR is already impacting our lives and the wave is constantly growing <sup>[1,2]</sup>. One crucial action point in the fight against AMR is the appropriate use of antimicrobials. The choice and use of antimicrobials has to be integrated into a well-informed decision making process and supported by antimicrobial and diagnostic stewardship programmes <sup>[3,4]</sup>. Next to essential local, national, and international guidelines on appropriate antimicrobial use, the information on AMR rates and antimicrobial use through reliable data analysis and reporting is vital. While data on national and international levels are typically easy to access through official reports, local data insights are often lacking, difficult to establish, and its generation requires highly trained professionals. Unfortunately, working with local AMR data is often furthermore complicated by very heterogeneous data structures and information systems within and between different settings <sup>[5,6]</sup>. Yet, decision makers in the clinical context need to be able to access these important data in an easy and rapid manner. Without a dedicated team of epidemiologically trained professionals, providing these insights could be challenging and error-prone. Incorrect data or data analyses could even lead to biased/erroneous empirical antimicrobial treatment policies.</p>
+<p>To overcome these hurdles, we previously developed new approaches to AMR data analysis and reporting to empower any expert on any level working with or relying on AMR data <sup>[7,8]</sup>. We aimed at reliable, reproducible, and transparent AMR data analysis. The underlying concepts are based on open-source software, making them free to use and adaptable to any setting-specific needs. To specify, we developed a software package for the statistical language R to simplify and standardise AMR data analysis based on international guidelines <sup>[7]</sup>. In addition, we demonstrated the application of this software package to create interactive analysis tools for rapid and user-friendly AMR data analysis and reporting <sup>[8]</sup>.</p>
+<p>However, while the use of our approach in research has been demonstrated <sup>[9–12]</sup>, the impact on workflows for AMR data analysis and reporting in clinical settings is pending. AMR data analysis and reporting are typically performed at clinical microbiology departments in hospitals, in microbiological laboratories, or as part of multidisciplinary antimicrobial stewardship activities. AMR data analysis and reporting require highly skilled professionals. In addition, thorough and in-depth analyses can be time consuming and sufficient resources need to be allocated for consistent and repeated reporting. This is further complicated by the lack of available software tools that fulfil all requirements such as incorporation of (inter-) national guidelines or reliable reference data.</p>
+<p>In this study, we aimed at demonstrating and studying the usability of our developed approach and its impact on clinicians’ workflows in an institutional healthcare setting. The approach should enable better AMR data analysis and reporting in less time.</p>
+</div>
+<div id="methods-1" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Methods</h2>
+<p>The study was initiated at the University Medical Center Groningen (UMCG), a 1339-bed tertiary care hospital in the Northern Netherlands and performed across the UMCG and Certe (a regional laboratory) in the Northern Netherlands. It was designed as a comparison study to evaluate the efficiency, effectiveness, and usability of a new AMR data analysis and reporting approach <sup>[7,8]</sup> against traditional reporting.</p>
+<div id="study-setup" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Study setup</h3>
+<p>The setup of the study is visualised in Figure 1 and is explained in the following sections.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-1"></span>
+<img src="images/06-01.jpg" alt="Study setup; the same AMR data was used along all steps and rounds." width="100%" />
+<p class="caption">
+Figure 6.1: Study setup; the same AMR data was used along all steps and rounds.
+</p>
+</div>
+<p>The study was based on a task document listing general AMR data analysis and reporting tasks (Table 1). This list served as the basis to compare effectiveness (solvability of each task for every user) and efficiency (time spent solving each task) of both approaches. Tasks were grouped into five related groups and analyses were performed per group (further referred to as five tasks). A maximum amount of time per task (group) was defined for each task. The list of tasks including correct results is available in Appendix A1.</p>
+<p class="tbl-caption">
+Table 1. AMR data analysis and reporting tasks.
+</p>
+<p><img src="images/06-t01.jpg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="amr-data" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> AMR data</h3>
+<p>Anonymised microbiological data were obtained from the Department of Medical Microbiology and Infection Prevention at the UMCG. The data consisted of 23,416 records from 18,508 unique blood culture tests that were taken between January 1, 2019 and December 31, 2019 which were retrieved from the local laboratory information system (LIS). Available variables were: test date, sample identification number, sample specimen, anonymised patient identification number, microbial identification code (if culture positive), antimicrobial susceptibility test results (S, I, R - susceptible, susceptible at increased exposure, resistant) for 52 antimicrobials. The exemplified data structure is presented in Table 2.</p>
+<p class="tbl-caption">
+Table 2. Raw data example.
+</p>
+<p><img src="images/06-t02.jpg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="amr-data-analysis-and-reporting" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> AMR data analysis and reporting</h3>
+<p>We used our previously developed approach <sup>[7,8]</sup> to create a customised browser-based AMR data analysis and reporting application. This application was used in this study and applied to the AMR data analysis and reporting tasks listed in the task document (Table 1). The development of the application followed an agile approach using scrum methodologies <sup>[14]</sup>. Agile development was used to effectively and iteratively work in a team of two developers, a clinical microbiologist, and an infection preventionist. The application was designed as an interactive web-browser based dashboard (Figure 2). The prepared dataset was already loaded into the system and interaction with the application was possible through any web-browser.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-2"></span>
+<img src="images/06-02.jpg" alt="Interactive dashboard for AMR data analysis used in this study." width="100%" />
+<p class="caption">
+Figure 6.2: Interactive dashboard for AMR data analysis used in this study.
+</p>
+</div>
+</div>
+<div id="study-participants" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Study participants</h3>
+<p>Participants in this study were recruited from the departments of Medical Microbiology, Critical Care Medicine, and Paediatrics, to reflect heterogeneous backgrounds of healthcare professionals working with AMR data. Members of the development team did not take part in the study.</p>
+</div>
+<div id="study-execution-and-data" class="section level3" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Study execution and data</h3>
+<p>First, study participants were asked to fill in an online questionnaire capturing their personal backgrounds, demographics, software experience, and experience in AMR data analysis and reporting. Next, participants were provided the task document together with the AMR data (csv- or xlsx-format). The participants were asked to perform a comprehensive AMR data report following the task document using their software of choice (round 1). Task results and information on time spent per task were self-monitored and returned by the participant using a structured report form. Lastly, participants repeated the AMR data analysis and reporting process with the same task document but using the new AMR data analysis and reporting application (round 2). Task results and information on time spent per task were again self-monitored and returned by the participant using the same structured report form as in the first round. This last step was evaluated using a second online questionnaire. The study execution process is illustrated in Figure 1.</p>
+</div>
+<div id="evaluation-and-study-data-analysis" class="section level3" number="6.2.6">
+<h3><span class="header-section-number">6.2.6</span> Evaluation and study data analysis</h3>
+<p>The utility of the new AMR data analysis and reporting application was evaluated according to ISO 9241-11:2018 <sup>[15]</sup>. This international standard comprises several specific metrics to quantify the usability of a tool with regard to reaching its defined goals (Figure 3). In this study the goal was a comprehensive AMR data report and comprised several tasks as outlined in the task document. The equipment was the focus of this study (traditional AMR data analysis and reporting approach vs. newly developed AMR data analysis and reporting approach).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-3"></span>
+<img src="images/06-03.jpg" alt="Usability framework based on ISO 9241-11." width="50%" />
+<p class="caption">
+Figure 6.3: Usability framework based on ISO 9241-11.
+</p>
+</div>
+<p>The three ISO standard usability measures (in grey) were defined as follows in this study: Effectiveness was determined by degree of task completion coded using three categories: 1) completed; 2) not completed (task not possible to complete); 3) not completed (task completion would take too long, e.g., &gt; 20 minutes). In addition, effectiveness was assessed by the variance in the task results stratified by study round. Deviation from the correct results was measured in absolute percent from the correct result. To account for potential differences in the results due to rounding, all numeric results were transformed to integers. Efficiency was determined by timing each individual task. Time on task started when the user started performing the task, all data was loaded, and the chosen analysis software was up and running. Time on task ended when the task reached one of the endpoints, as described above. In the analysis, the mean time for each task and the mean total time for the complete report across users was calculated. Statistically significant difference was tested using paired Student’s t-test. All analyses were performed in R <sup>[16]</sup>. Outcomes of tests were considered statistically significant for <em>p</em> &lt; 0.05. Accuracy of the reported results per task and round were studied by calculating the deviation of the reported result in absolute percent from the correct result. Satisfaction was measured using the System Usability Scale (SUS), a 10-item Likert scale with levels from 1 (strongly disagree) to 5 (strongly agree, see Appendix A3) <sup>[17]</sup>. The SUS yields a single number from 0 to 100 representing a composite measure of the overall usability of the system being studied (SUS questions and score calculation in the Appendix A2).</p>
+</div>
+</div>
+<div id="results-1" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Results</h2>
+<div id="study-participants-1" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Study participants</h3>
+<p>In total 10 participants were recruited for this study. Most participants were clinical microbiologists (in training) (70%). The median age of the participant group was 40.5 years with a median working experience in the field of 8.0 years. The relevance of AMR data as part of the participants’ job was rated very high (median of 5.0; scale 1-5). AMR data analysis was part of the participants’ job for 60% of all participants. Participants reported to be very experienced in interpreting AMR data structures (median 5.0, scale 1-5). Participants were less experienced in epidemiological data analysis (median 3.0, scale 1-5). All participant characteristics are summarised in Table 3.</p>
+<p class="tbl-caption">
+Table 3. Study participant characteristics.
+</p>
+<p><img src="images/06-t03.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>The participants reported a diverse background in software experience for data analysis, with most experience reported for Microsoft Excel (Figure 4).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-4"></span>
+<img src="images/06-04.jpg" alt="Data analysis software experience reported by study participants." width="100%" />
+<p class="caption">
+Figure 6.4: Data analysis software experience reported by study participants.
+</p>
+</div>
+</div>
+<div id="effectiveness-and-accuracy" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Effectiveness and accuracy</h3>
+<p>Not all participants were able to complete the tasks within the given time frame. Average task completion between the first round (traditional AMR data analysis and reporting) and the second round (new AMR data analysis and reporting) changed from 56% (SD: 23%) to 96% (SD: 6%) (<em>p</em> &lt; 0.05). Task completion per question and round is displayed in Figure 5. Variation in responses for each given task showed significant differences between the first and second round.</p>
+<p>Figure 6 shows the deviation in absolute percent from the correct results from the correct result per round and task. The proportion of correct answers in the available results increased from 38% in the first round to 98% in the second round (<em>p</em> &lt; 0.001). A sub-analysis of species-specific results for task 3 round 1 is available in the appendix (A3).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-5"></span>
+<img src="images/06-05.jpg" alt="Task completion in percent by task number and round." width="100%" />
+<p class="caption">
+Figure 6.5: Task completion in percent by task number and round.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:fig6-6"></span>
+<img src="images/06-06.jpg" alt="Deviation from the correct result by task and round in absolute percent from correct result. Only completed tasks (n) are shown." width="100%" />
+<p class="caption">
+Figure 6.6: Deviation from the correct result by task and round in absolute percent from correct result. Only completed tasks (n) are shown.
+</p>
+</div>
+</div>
+<div id="efficiency" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Efficiency</h3>
+<p>Overall, the mean time spent per round was significantly reduced from 93.7 (SD: 21.6) minutes to 22.4 (SD: 13.7) minutes (<em>p</em> &lt; 0.001). Significant time reduction could be observed for tasks 2-5 (Figure 7). Analyses were further stratified to compare efficiency between participants that reported AMR data analysis as part of their job versus not part of the job. No significant time difference for completing all tasks could be found between the groups. However, in both groups the overall time for all tasks significantly decreased between the first and second round: on average by 70.7 minutes (<em>p</em> &lt; 0.001) in the group reporting AMR data analysis as part of their job and by 72.1 minutes (<em>p</em> = 0.01) in the group not reporting AMR data analysis as part of their job.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-7"></span>
+<img src="images/06-07.jpg" alt="Mean time spent per task in minutes in each round (yellow = first round, red = second round). Statistical significance was tested using two-sided paired t-tests. All results were included irrespective of correctness of the results." width="100%" />
+<p class="caption">
+Figure 6.7: Mean time spent per task in minutes in each round (yellow = first round, red = second round). Statistical significance was tested using two-sided paired t-tests. All results were included irrespective of correctness of the results.
+</p>
+</div>
+</div>
+<div id="satisfaction" class="section level3" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Satisfaction</h3>
+<p>Participants rated the usability of the new AMR reporting tool using the system usability scale (SUS) which takes values from 0 to 100 (Appendix A2). This resulted in a median of 83.8 on the SUS.</p>
+</div>
+</div>
+<div id="discussion-2" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Discussion</h2>
+<p>This study demonstrates the effectiveness, efficiency, and accuracy of using open-source software tools to improve AMR data analysis and reporting. We applied our previously developed approach to AMR data analysis and reporting <sup>[7,8]</sup> in a clinical scenario and tested these tools with study participants (users) working in the field of AMR. Comparing traditional reporting tools with our newly developed reporting tools in a two-step process, we demonstrated the usability and validity of our approach. Based on a five item AMR data analysis and reporting task list and the provided AMR data, study participants reported significantly less time spent on creating an AMR data report (on average 93.7 minutes vs. 22.4 minutes; <em>p</em> &lt; 0.01). Task completion increased significantly from 56% to 96%, which indicates that with traditional reporting approaches common questions around AMR are hard to answer in a limited time. The accuracy of the results greatly improved using the new AMR reporting approach, implicating that erroneous answers are more common when users rely on general non-AMR-specific traditional software solutions. The usability of our AMR reporting approach was rated with a median of 83.8 on the SUS. The SUS is widely used in usability assessments of software solutions. A systematic analysis of more than 1000 reported SUS scores for web-based applications across different fields has found a mean SUS score of 68.1 <sup>[18]</sup>. The results thus demonstrate a good usability of our approach.</p>
+<p>The task list used in this study reflects standard AMR reporting tasks. More sophisticated tasks, such as the detection of multi-drug resistance according to (inter-)national guidelines were not included. However, these analyses are vital in any setting but restrained since the required guidelines are not included in traditional reporting and analysis tools (e.g., Microsoft Excel, SPSS, etc.). Notably, the underlying software used in this study <sup>[7]</sup> does provide methods to easily incorporate (inter)national guidelines such as the definitions for (multi-)drug resistance and country-specific (multi-)drug resistant organisms. The increase in task completion rate and accuracy of the results demonstrated that our tools empower specialists in the AMR field to generate reliable and valid AMR data reports. This is important as it enables detailed insights into the state of AMR on any level. These insights are often lacking. Our approach could fill this gap by democratising the ability for reliable and valid AMR data analysis and reporting.</p>
+<p>This need is exemplified in the worrisome heterogeneity of the reporting results using traditional AMR reporting tools in the first round. Only 37.9% of the results in the first round were correct. Together with a task completion rate of 56%, this demonstrates that traditional tools are not suitable for AMR reporting. The inability of working in reproducible and transparent workflows further aggravates reporting with these traditional tools. All participants in the study should be able to produce standard AMR reports and 90% indicated that they worked with AMR data before. Sixty percent reported AMR data analysis to be part of their job, but no efficiency difference between groups were found. Our results show that AMR data analysis and reporting is challenging and can be highly error-prone. But an approach such as the one we developed can lead to correct results in a short time while being reproducible and transparent.</p>
+<p>We chose an agile workflow which enabled us to integrate clinical feedback throughout the development process in this study. We can highly recommend this efficient approach for projects that need to bridge clinical requirements, statistical approaches, and software development. Our approach was inspired by others not in the AMR field that describe the use of reproducible open-source workflows in ecology <sup>[19]</sup>. We found that open-source software enables the transferability of methodological approaches across research fields. This transfer is a great example of the strength in the scientific community when working interdisciplinarily and sharing reliable and reproducible workflow.</p>
+<p>This study is subject to limitations. Only ten participants were recruited for this study. Although low participant numbers are frequently observed in usability studies and reports show that only five participants suffice to study the usability of a new system, a larger sample size would be desirable <sup>[20–24]</sup>. In addition, other methods (e.g., ‘think aloud’ method) beyond the single use of the SUS for the evaluation of our approach would further improve insights in the usability but were not possible in the study setting <sup>[25]</sup>. Although the introduction of new AMR data and reporting tools made use of an already available approach, implementation still requires staff experienced in R. Reporting requirements also differ per setting and tailor-made solutions incorporating different requirements are needed.</p>
+<p>The present study shows that answering common AMR-related questions is tremendously burdened for professionals working with data. However, answers to such questions are the requirement to enable hospital-wide monitoring of AMR levels. The monitoring, be it on the institutional, regional, or (inter-) national level, can lead to alteration of treatment policies. It is thus of utmost importance that reliable results of AMR data analyses are ensured to avoid imprecise and erroneous results that could potentially be harmful to patients. We show that traditional reporting tools and applications that are not equipped for conducting microbiology epidemiological analyses seem unfit for this task - even for the most basic AMR data analyses. To fill this gap, we have developed new tools for AMR data analysis and reporting. In this study, we demonstrated that these tools can be used for better AMR data analysis and reporting in less time.</p>
+</div>
+<div id="acknowledgements-2" class="section level2 unnumbered">
+<h2>Acknowledgements</h2>
+<p>We thank all study participants for their participation in this study and highly value their time spent on these tasks next to their clinical and other professional duties.</p>
+</div>
+<div id="funding" class="section level2 unnumbered">
+<h2>Funding</h2>
+<p>This study was partly supported by the INTERREG V A (202085) funded project EurHealth-1Health (<a href="http://www.eurhealth1health.eu" class="uri">http://www.eurhealth1health.eu</a>), part of a Dutch-German cross-border network supported by the European Commission, the Dutch Ministry of Health, Welfare and Sport, the Ministry of Economy, Innovation, Digitalisation and Energy of the German Federal State of North Rhine-Westphalia and the Ministry for National and European Affairs and Regional Development of Lower Saxony.</p>
+<p>In addition, this study was part of a project funded by the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement 713660 (MSCA-COFUND-2015-DP “Pronkjewail”).</p>
+</div>
+<div id="conflict-of-interest" class="section level2 unnumbered">
+<h2>Conflict of interest</h2>
+<p>The authors report no conflict of interests.</p>
+</div>
+<div id="references-5" class="section level2 unnumbered">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li>O’Neill J. Review on antimicrobial resistance: tackling a crisis for the health and wealth of nations. London: Wellcome Trust; 2014.</li>
+<li>OECD. Stemming the Superbug Tide. OECD Health Policy Studies 2018:224. <a href="https://doi.org/10.1787/9789264307599-en" class="uri">https://doi.org/10.1787/9789264307599-en</a>.</li>
+<li>Dyar OJ, Huttner B, Schouten J, Pulcini C, ESGAP (ESCMID Study Group for Antimicrobial stewardshiP). What is antimicrobial stewardship? Clin Microbiol Infect 2017;23:793–8. <a href="https://doi.org/10.1016/j.cmi.2017.08.026" class="uri">https://doi.org/10.1016/j.cmi.2017.08.026</a>.</li>
+<li>Morjaria S, Chapin KC. who to test, when, and for what: why diagnostic stewardship in infectious diseases matters. J Mol Diagn 2020;22:1109–13. <a href="https://doi.org/10.1016/j.jmoldx.2020.06.012" class="uri">https://doi.org/10.1016/j.jmoldx.2020.06.012</a>.</li>
+<li>Tacconelli E, Sifakis F, Harbarth S, Schrijver R, van Mourik M, Voss A, <em>et al.</em> Surveillance for control of antimicrobial resistance. Lancet Infect Dis 2018;18:e99–106. <a href="https://doi.org/10.1016/S1473-3099(17)30485-1" class="uri">https://doi.org/10.1016/S1473-3099(17)30485-1</a>.</li>
+<li>Limmathurotsakul D, Dunachie S, Fukuda K, Feasey NA, Okeke IN, Holmes AH, <em>et al.</em> Improving the estimation of the global burden of antimicrobial resistant infections. Lancet Infect Dis 2019;19:e392–8. <a href="https://doi.org/10.1016/S1473-3099(19)30276-2" class="uri">https://doi.org/10.1016/S1473-3099(19)30276-2</a>.</li>
+<li>Berends MS, Luz CF, Friedrich AW, Sinha BNM, Albers CJ, Glasner C. AMR - An R package for working with antimicrobial resistance data. Cold Spring Harbor Laboratory 2019:810622. <a href="https://doi.org/10.1101/810622" class="uri">https://doi.org/10.1101/810622</a>.</li>
+<li>Luz CF, Berends MS, Dik J-WH, Lokate M, Pulcini C, Glasner C, <em>et al.</em> Rapid analysis of diagnostic and antimicrobial patterns in R (RadaR): interactive open-source software app for infection management and antimicrobial stewardship. J Med Internet Res 2019;21:e12843. <a href="https://doi.org/10.2196/12843" class="uri">https://doi.org/10.2196/12843</a>.</li>
+<li>Le Guern R, Titécat M, Loïez C, Duployez C, Wallet F, Dessein R. Comparison of time-to-positivity between two blood culture systems: a detailed analysis down to the genus-level. Eur J Clin Microbiol Infect Dis 2021. <a href="https://doi.org/10.1007/s10096-021-04175-9" class="uri">https://doi.org/10.1007/s10096-021-04175-9</a>.</li>
+<li>Kim S, Yoo SJ, Chang J. importance of susceptibility rate of “the first” isolate: evidence of real-world data. Medicina 2020;56. <a href="https://doi.org/10.3390/medicina56100507" class="uri">https://doi.org/10.3390/medicina56100507</a>.</li>
+<li>Tenea GN, Jarrin-V P, Yepez L. microbiota of wild fruits from the amazon region of ecuador: linking diversity and functional potential of lactic acid bacteria with their origin. In: Mikkola HJ, editor. Ecosystem and Biodiversity of Amazonia, Rijeka: IntechOpen; 2021. <a href="https://doi.org/10.5772/intechopen.94179" class="uri">https://doi.org/10.5772/intechopen.94179</a>.</li>
+<li>Dutey-Magni PF, Gill MJ, McNulty D, Sohal G, Hayward A, Shallcross L, <em>et al.</em> Feasibility study of hospital antimicrobial stewardship analytics using electronic health records. JAC Antimicrob Resist 2021;3. <a href="https://doi.org/10.1093/jacamr/dlab018" class="uri">https://doi.org/10.1093/jacamr/dlab018</a>.</li>
+<li>Clinical and Laboratory Standards Institute. M39-A4, Analysis and Presentation of Cumulative Antimicrobial Susceptibility Test Data, 4th Edition. 4th ed. Pittsburgh: Clinical and Laboratory Standards Institute; 2014.</li>
+<li>Schwaber K, Beedle M. Agile software development with Scrum. London: Pearson; 2001.</li>
+<li>International Organization for Standardization. Ergonomics of human-system interaction — part 11: usability: definitions and concepts (ISO 9241-11:2018 ); Geneva: International Organization for Standardization; 2018.</li>
+<li>R Core Team. R: A language and environment for statistical computing. Vienna: R Foundation for Statistical Computing; 2019.</li>
+<li>Brooke J. SUS: A retrospective. Journal of Usability Studies 2013;8:29–40.</li>
+<li>Bangor A, Kortum PT, Miller JT. An empirical evaluation of the system usability scale. International Journal of Human–Computer Interaction 2008;24:574–94. <a href="https://doi.org/10.1080/10447310802205776" class="uri">https://doi.org/10.1080/10447310802205776</a>.</li>
+<li>Lowndes JSS, Best BD, Scarborough C, Afflerbach JC, Frazier MR, O’Hara CC, <em>et al.</em> Our path to better science in less time using open data science tools. Nat Ecol Evol 2017;1:160. <a href="https://doi.org/10.1038/s41559-017-0160" class="uri">https://doi.org/10.1038/s41559-017-0160</a>.</li>
+<li>Ledieu T, Bouzillé G, Thiessard F, Berquet K, Van Hille P, Renault E, <em>et al.</em> Timeline representation of clinical data: usability and added value for pharmacovigilance. BMC Med Inform Decis Mak 2018;18:86. <a href="https://doi.org/10.1186/s12911-018-0667-x" class="uri">https://doi.org/10.1186/s12911-018-0667-x</a>.</li>
+<li>Rubin J, Chisnell D. Handbook of usability testing: how to plan, design, and conduct effective tests. Hoboken: Wiley; 2008.</li>
+<li>Albert W, Tullis T. Measuring the user experience: collecting, analyzing, and presenting usability metrics. Burlington: Morgan Kaufmann; 2013.</li>
+<li>Iordatii M, Venot A, Duclos C. Design and evaluation of a software for the objective and easy-to-read presentation of new drug properties to physicians. BMC Med Inform Decis Mak 2015;15:42. <a href="https://doi.org/10.1186/s12911-015-0158-2" class="uri">https://doi.org/10.1186/s12911-015-0158-2</a>.</li>
+<li>Bastien JMC. Usability testing: a review of some methodological and technical aspects of the method. Int J Med Inform 2010;79:e18–23. <a href="https://doi.org/10.1016/j.ijmedinf.2008.12.004" class="uri">https://doi.org/10.1016/j.ijmedinf.2008.12.004</a>.</li>
+<li>Jaspers MWM. A comparison of usability methods for testing interactive health technologies: methodological aspects and empirical evidence. Int J Med Inform 2009;78:340–53. <a href="https://doi.org/10.1016/j.ijmedinf.2008.10.002" class="uri">https://doi.org/10.1016/j.ijmedinf.2008.10.002</a>.</li>
+</ol>
+</div>
+<div id="appendix" class="section level2 unnumbered">
+<h2>Appendix</h2>
+<div id="appendix-a1-task-lists-including-correct-results" class="section level3 unnumbered">
+<h3>Appendix A1: Task lists including correct results</h3>
+<p class="tbl-caption">
+Table A1. AMR data analysis and reporting tasks with correct results
+</p>
+<p><img src="images/06-ta01.jpg" width="100%" style="display: block; margin: auto;" /><img src="images/06-ta01b.jpg" width="100%" style="display: block; margin: auto;" /><img src="images/06-ta01c.jpg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="appendix-a2-system-usability-scale-sus" class="section level3 unnumbered">
+<h3>Appendix A2: System Usability Scale (SUS)</h3>
+<ol style="list-style-type: decimal">
+<li>I think that I would like to use this system frequently.</li>
+<li>I found the system unnecessarily complex.</li>
+<li>I thought the system was easy to use</li>
+<li>I think that I would need the support of a technical person to be able to use this system.</li>
+<li>I found the various functions in this system were well integrated.</li>
+<li>I thought there was too much inconsistency in this system.</li>
+<li>I would imagine that most people would learn to use this system very quickly.</li>
+<li>I found the system very cumbersome to use.</li>
+<li>I felt very confident using the system.</li>
+<li>I needed to learn a lot of things before I could get going with this system.</li>
+</ol>
+<p>(Each item with levels: 1 = strongly disagrees to 5 = strongly agrees)</p>
+<p>Scores for individual items are not meaningful on their own. To calculate the SUS score, the score contributions from each item must be summed. Each item’s score contribution ranges from 0 to 4. For items 1, 3, 5, 7, and 9 the score contribution is the scale position minus 1. For items 2, 4, 6, 8, and 10, the contribution is 5 minus the scale position. The sum of the scores is multiplied by 2.5 to obtain the SUS.</p>
+</div>
+<div id="appendix-a3-task-3-sub-analysis" class="section level3 unnumbered">
+<h3>Appendix A3: Task 3 sub-analysis</h3>
+<p>Task 3 asked participants to identify the ten most frequent species in the provided data set, while correcting for multiple occurrences of a species within a patient. Figure A3 illustrates the deviation from the correct result in the first round (traditional AMR reporting) per species. For this analysis also incomplete results were included (i.e., task not completed but some results provided).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig6-a1"></span>
+<img src="images/06-a03.jpg" alt="Results from task 3 in round 1. Deviation in absolute percent from the correct result per identified species. Also, incomplete data from participants was used in this analysis (i.e., task not completed but some results given). The correct number per species is given in addition to the number provided answers." width="100%" />
+<p class="caption">
+Figure 6.8: Results from task 3 in round 1. Deviation in absolute percent from the correct result per identified species. Also, incomplete data from participants was used in this analysis (i.e., task not completed but some results given). The correct number per species is given in addition to the number provided answers.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch05-radar.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["a_new_instrument_for_microbial_epidemiology.pdf", "a_new_instrument_for_microbial_epidemiology.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
