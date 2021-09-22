@@ -53,7 +53,9 @@ insert_graphic("images/cover.jpg")
 
 This is the integral PhD thesis 'A New Instrument for Microbial Epidemiology' (DOI [10.33612/diss.177417131](https://doi.org/10.33612/diss.177417131)) by [Matthijs S. Berends](https://www.rug.nl/staff/m.s.berends), which was defended publicly at the University of Groningen, the Netherlands, on 25 August 2021.
 
-All texts were copied from the printed version 'as is'; no modifications were made.
+All texts were copied from the printed version 'as is'; no modifications were made, although non-essential parts were left out (such as the personal acknowledgements and the curriculum vitae).
+
+The shortened URL of the online version of this PhD thesis (an R Markdown project) is [git.io/PhDthesisAMR](https://git.io/PhDthesisAMR) (case-sensitive).
 
 ### Short summary (250 words) {-}
 
