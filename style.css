@@ -62,15 +62,10 @@ li.chapter b:after{
 }
 .book-body p {
   text-align: justify !important;
-  font-family: 'EB Garamond', serif !important;
   /* font-weight: 500; */
-  font-size: 1.8rem !important;
-}
-.book .book-body .section * {
-  color: black;
 }
 .book-body p code,
-.book-body li code{
+.book-body li code {
   font-size: 1.3rem !important;
   white-space: unset;
 }
@@ -86,6 +81,10 @@ li.chapter b:after{
   color: black;
   font-size: 1.7rem !important;
   line-height: 1.2;
+}
+.book.color-theme-2 .book-body .caption,
+.book.color-theme-2 .book-body .tbl-caption {
+  color: inherit;
 }
 .book-body .caption {
   margin-top: 0px !important;
@@ -104,10 +103,6 @@ img[src*=-t] {
   margin-bottom: 2.5em !important;
 }
 
-.book-body li {
-  font-family: 'EB Garamond', serif !important;
-  font-size: 1.8rem !important;
-}
 [id^="references"] li {
   /* stylise references */
   text-align: justify !important;
@@ -169,11 +164,53 @@ img[src*=-t] {
   margin-top: 0px !important;
   text-align: center !important;
 }
-.book-body .author,
-.book-body .date {
+.book.font-family-0 .book-body p.author,
+.book.font-family-1 .book-body p.author,
+.book.font-family-0 .book-body p.date,
+.book.font-family-1 .book-body p.date {
   font-family: "HelveticaNeue-Medium", "Helvetica Neue" !important;
   font-size: 1.25em !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   text-align: center !important;
+}
+
+/* MENU SETTINGS /*
+
+/* menu settings colour */
+.book .book-body .section * {
+  color: black;
+}
+.book.color-theme-2 .book-body .section * {
+  color: inherit;
+}
+/* menu settings font family */
+.book.font-family-0 .book-body p,
+.book.font-family-0 .book-body li {
+  font-family: "Helvetica Neue", sans-serif !important;
+}
+.book.font-family-1 .book-body p,
+.book.font-family-1 .book-body li {
+  font-family: 'EB Garamond', serif !important;
+}
+/* menu settings font size */
+.book.font-size-0 .book-body p,
+.book.font-size-0 .book-body li {
+  font-size: 1.0rem !important;
+}
+.book.font-size-1 .book-body p,
+.book.font-size-1 .book-body li {
+  font-size: 1.4rem !important;
+}
+.book.font-size-2 .book-body p,
+.book.font-size-2 .book-body li {
+  font-size: 1.8rem !important;
+}
+.book.font-size-3 .book-body p,
+.book.font-size-3 .book-body li {
+  font-size: 2.8rem !important;
+}
+.book.font-size-4 .book-body p,
+.book.font-size-4 .book-body li {
+  font-size: 4.0rem !important;
 }
