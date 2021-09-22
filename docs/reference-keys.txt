@@ -109,7 +109,6 @@ efficiency
 satisfaction
 discussion-2
 ch07-cons
-abstract-5
 introduction-4
 materials-methods
 study-setting-and-patient-cohort

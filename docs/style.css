@@ -174,6 +174,10 @@ img[src*=-t] {
   margin-bottom: 0 !important;
   text-align: center !important;
 }
+.copyright {
+  text-align: center;
+  margin: 2rem;
+}
 
 /* MENU SETTINGS /*
 
