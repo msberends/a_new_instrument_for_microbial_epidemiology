@@ -24,6 +24,7 @@ fig:fig7-1
 fig:fig7-2
 fig:fig7-3
 fig:fig7-4
+fig:fig8-1
 ch01-introduction
 microbial-epidemiology
 antimicrobial-resistance-in-microorganisms
@@ -126,3 +127,13 @@ other-antibiotics
 other-relevant-species
 effect-of-patient-age-groups-on-antibiotic-resistance-in-cons
 discussion-3
+ch08-defining-mdr
+abstract-6
+introduction-5
+methods-2
+results-3
+number-of-antibiograms-and-patients
+results-of-mrgn-and-brmo-classification
+discussion-4
+acknowledgements-3
+conflicts-of-interest
